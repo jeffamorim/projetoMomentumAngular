@@ -10,6 +10,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { SbrenosComponent } from './sbrenos/sbrenos.component';
 import { ContatoComponent } from './contato/contato.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UsuariosComponent } from './usuarios/usuarios.component'
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { ContatoComponent } from './contato/contato.component';
     NavbarComponent,
     FooterComponent,
     SbrenosComponent,
-    ContatoComponent
+    ContatoComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
