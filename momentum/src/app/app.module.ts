@@ -11,7 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SbrenosComponent } from './sbrenos/sbrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UsuariosComponent } from './usuarios/usuarios.component'
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FormularioComponent } from './formulario/formulario.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component'
     FooterComponent,
     SbrenosComponent,
     ContatoComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
