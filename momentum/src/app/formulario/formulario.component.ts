@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Validacao } from '../validacao';
+import { UsuarioService } from '../service/usuario.service';
+import { Usuario } from '../model/Usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -8,26 +11,27 @@ import { Validacao } from '../validacao';
 })
 export class FormularioComponent implements OnInit {
   validacao: Validacao;
+  usuario: Usuario;
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit() {
 
     this.validacao = new Validacao();
+    this.usuario = new Usuario();
 
   }
 
-  onSubmit() {
+  cadastrar() {
 
-    let nome = this.validacao.nome.length;
-    let email = this.validacao.email.length;
-    let senha = this.validacao.senha;
-    let confSenha = this.validacao.confirmarSenha;
-    let comprSenha = this.validacao.senha.length;
+    let nome = this.usuario.nome;
+    let email = this.usuario.email;
+    let senha = this.usuario.senha;
+    let confirmaSenha = this.usuario.confirmaSenha;
 
-    if (comprSenha > 9) {
-      if (senha === confSenha) {
-        console.log("Passou")
+    if (senha.length > 9 && nome.length >= 2 && email.includes('@')) {
+      if (senha === confirmaSenha) {
+        console.log("Cadastrado com Sucesso!")
       }
 
       else {
@@ -40,7 +44,12 @@ export class FormularioComponent implements OnInit {
       return false;
     }
 
-    console.log(this.validacao);
+    console.log(this.usuario);
+
+    this.usuarioService.postUsuario(this.usuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+      this.router.navigate(['/usuarios']);
+    });
   }
 
 
