@@ -5,6 +5,7 @@ import { SbrenosComponent } from './sbrenos/sbrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { EditarComponent } from './editar/editar.component';
 
 const routes: Routes = [
   
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'sbrenos', component: SbrenosComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: 'formulario', component: FormularioComponent }
+  { path: 'formulario', component: FormularioComponent },
+  { path: 'editar', component: EditarComponent }
 
 ];
 

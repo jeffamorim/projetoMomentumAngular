@@ -13,7 +13,8 @@ import { SbrenosComponent } from './sbrenos/sbrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { FormularioComponent } from './formulario/formulario.component'
+import { FormularioComponent } from './formulario/formulario.component';
+import { EditarComponent } from './editar/editar.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormularioComponent } from './formulario/formulario.component'
     SbrenosComponent,
     ContatoComponent,
     UsuariosComponent,
-    FormularioComponent
+    FormularioComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
