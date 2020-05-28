@@ -14,7 +14,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { EditarComponent } from './editar/editar.component'
+import { EditarComponent } from './editar/editar.component';
+import { DeletarComponent } from './deletar/deletar.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditarComponent } from './editar/editar.component'
     ContatoComponent,
     UsuariosComponent,
     FormularioComponent,
-    EditarComponent
+    EditarComponent,
+    DeletarComponent
   ],
   imports: [
     BrowserModule,

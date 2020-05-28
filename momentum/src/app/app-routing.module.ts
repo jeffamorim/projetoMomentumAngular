@@ -6,6 +6,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { EditarComponent } from './editar/editar.component';
+import { DeletarComponent } from './deletar/deletar.component';
 
 const routes: Routes = [
   
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'formulario', component: FormularioComponent },
-  { path: 'editar', component: EditarComponent }
+  { path: 'editar/:id', component: EditarComponent },
+  { path: 'deletar/:id', component: DeletarComponent }
 
 ];
 

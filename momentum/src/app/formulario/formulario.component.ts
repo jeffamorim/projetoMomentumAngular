@@ -11,14 +11,11 @@ import { Router } from '@angular/router';
 })
 export class FormularioComponent implements OnInit {
   validacao: Validacao;
-  usuario: Usuario;
+  usuario: Usuario = new Usuario;
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
-  ngOnInit() {
-
-    this.validacao = new Validacao();
-    this.usuario = new Usuario();
+  ngOnInit(): void {
 
   }
 
