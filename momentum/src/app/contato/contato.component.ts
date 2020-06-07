@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-contato',
@@ -11,10 +8,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 })
 export class ContatoComponent implements OnInit {
 
-  faFacebook = faFacebook;
-  faTwitter = faTwitter;
-  faLinkedin = faLinkedin;
-  faGithub = faGithub;
+  faHeart = faHeart;
 
   constructor() { }
 
@@ -22,4 +16,3 @@ export class ContatoComponent implements OnInit {
   }
 
 }
-

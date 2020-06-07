@@ -1,110 +1,70 @@
-<div class="parallax">
+<div class="container-fluid">
 
-    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
 
-        <div class="row">
-            <div class="col-md-12">
-
-                <h5 class="info-color white-text text-center mt-5 mb-4">
-                    <strong>Ficou com alguma dúvida, quer dar um feedback ou mesmo, nos dar um alô, contáte-nos!</strong>
-                </h5>
-
-                <div class="row d-flex justify-content-center mb-3">
-                    <img src="./assets/logomomentum.png" alt="Logo Momentum!" width="128" height="128">
-                </div>
+            <div class="container my-5">
 
                 <!-- Material form register -->
-                <div class="card fundo mb-5">
+                <div class="card">
 
                     <!--Card content-->
-                    <div class="card-body px-lg-5 pt-5">
+                    <div class="card-body">
+
+                        <div class="text-center mb-3 texto">
+                            <p>Ficou com alguma dúvida? Quer dar um feedback? Ou mesmo nos dar um alô? Mande uma
+                                mensagem que responderemos com todo o carinho! <fa-icon [icon]=faHeart></fa-icon>
+                            </p>
+                        </div>
 
                         <!-- Form -->
                         <div class="text-center form-group">
 
-                            <div class="form-row">
-                                <div class="col">
+                            <div class="form-row d-flex justify-content-center">
+                                <div class="col-md-6">
                                     <!-- First name -->
                                     <div class="md-form">
-                                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
-                                        <label for="materialRegisterFormFirstName">Primeiro Nome</label>
-                                        <div style="visibility: hidden" class="alert alert-danger" role="alert-name"
-                                            id="alert-firstName"></div>
+                                        <input type="text" id="nome" class="form-control mb-1" required="true">
+                                        <label for="nome">Nome</label>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <!-- Last name -->
+
+                                <div class="col-md-6">
+                                    <!-- Phone number -->
                                     <div class="md-form">
-                                        <input type="text" id="materialRegisterFormLastName" class="form-control">
-                                        <label for="materialRegisterFormLastName">Último Nome</label>
-                                        <div style="visibility: hidden" class="alert alert-danger" role="alert-name"
-                                            id="alert-secondName"></div>
+                                        <input type="text" id="telefone" class="form-control">
+                                        <label for="telefone">Telefone</label>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- E-mail -->
-                            <div class="md-form mt-0">
-                                <input type="email" id="materialRegisterFormEmail" class="form-control">
-                                <label for="materialRegisterFormEmail">Email</label>
-                                <div style="visibility: hidden" class="alert alert-danger" role="alert-name"
-                                    id="alert-email"></div>
-                            </div>
-
-                            <!-- Password -->
-                            <div class="md-form">
-                                <input type="password" id="materialRegisterFormPassword" class="form-control"
-                                    aria-describedby="materialRegisterFormPasswordHelpBlock">
-                                <label for="materialRegisterFormPassword">Senha</label>
-                                <div style="visibility: hidden" class="alert alert-danger" role="alert-name"
-                                    id="alert-password">
+                            <div class="form-row d-flex justify-content-center">
+                                <div class="col">
+                                    <!-- E-mail -->
+                                    <div class="md-form">
+                                        <input type="email" id="email" class="form-control mb-1" required="true">
+                                        <label for="email">Informe o seu Email</label>
+                                    </div>
                                 </div>
-
                             </div>
 
-                            <!-- Phone number -->
-                            <div class="md-form">
-                                <input type="text" id="materialRegisterFormPhone" class="form-control"
-                                    aria-describedby="materialRegisterFormPhoneHelpBlock">
-                                <label for="materialRegisterFormPhone">Telefone</label>
-                                <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                                    Opcional - Para verificação de duas etapas
-                                </small>
+                            <!-- Message -->
+                            <div class="md-form mt-3 col">
+                                <div class="mb-1 message">Fique à vontade para se expressar!</div>
+                                <textarea class="form-control" name="textoMensagem" id="mensagem" cols="35" rows="5"
+                                    required="true"></textarea>
+                                <label for="mensagem">Nos mande uma mensagem.</label>
                             </div>
 
-                            <!-- Newsletter -->
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
-                                <label class="form-check-label" for="materialRegisterFormNewsletter">Assinale para
-                                    receber
-                                    novidades de nossa plataforma!</label>
+
+                            <div class="form-row d-flex justify-content-center">
+                                <div class="col-md-6">
+                                    <!-- Sign up button -->
+                                    <button
+                                        class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                        type="button" id="btnEnviar">Enviar</button>
+                                </div>
                             </div>
-
-                            <!-- Sign up button -->
-                            <button class="btn btn-outline-primary btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                type="button" id="btnEnviar">Juntar-se!</button>
-
-                            <!-- Social register -->
-                            <p>ou se inscreva com:</p>
-
-                            <a type="button" class="btn-floating btn-fb btn-sm">
-                                <fa-icon [icon]=faFacebook></fa-icon>
-                            </a>
-                            <a type="button" class="btn-floating btn-tw btn-sm">
-                                <fa-icon [icon]=faTwitter></fa-icon>
-                            </a>
-                            <a type="button" class="btn-floating btn-li btn-sm">
-                                <fa-icon [icon]=faLinkedin></fa-icon>
-                            </a>
-                            <a type="button" class="btn-floating btn-git btn-sm">
-                                <fa-icon [icon]=faGithub></fa-icon>
-                            </a>
-
-                            <hr>
-
-                            <!-- Terms of service -->
-                            <em>Se inscrevendo</em> você aceita os nossos
-                            <a href="#" target="">termos de privacidade.</a>
 
                         </div>
                         <!-- Form -->
@@ -115,6 +75,7 @@
                 <!-- Material form register -->
 
             </div>
+
         </div>
 
     </div>

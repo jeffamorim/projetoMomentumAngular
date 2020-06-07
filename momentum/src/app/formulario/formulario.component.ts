@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Validacao } from '../validacao';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
@@ -10,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  validacao: Validacao;
   usuario: Usuario = new Usuario;
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
