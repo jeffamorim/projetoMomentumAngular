@@ -7,13 +7,15 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
-  
+
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'sbrenos', component: SbrenosComponent },
+  { path: 'sobrenos', component: SbrenosComponent },
   { path: 'contato', component: ContatoComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'editar/:id', component: EditarComponent },

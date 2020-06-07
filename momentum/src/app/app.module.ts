@@ -15,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { EditarComponent } from './editar/editar.component';
-import { DeletarComponent } from './deletar/deletar.component'
+import { DeletarComponent } from './deletar/deletar.component';
+import { FaqComponent } from './faq/faq.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DeletarComponent } from './deletar/deletar.component'
     UsuariosComponent,
     FormularioComponent,
     EditarComponent,
-    DeletarComponent
+    DeletarComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
