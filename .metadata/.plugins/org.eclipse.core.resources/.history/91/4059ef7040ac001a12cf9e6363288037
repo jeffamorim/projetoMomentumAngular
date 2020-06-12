@@ -1,5 +1,0 @@
-package momentum.redesocial.repository;
-
-public interface PostagemRepository {
-
-}
