@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.navbar {
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+}
+
+.nav-item > a:hover{
+    color: #0e6642;  
+    font-size: 1.05em;
+}

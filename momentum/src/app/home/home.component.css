@@ -1,0 +1,18 @@
+#texto1{
+    width: 80%;
+}
+
+#bt{
+    width: 30%;   
+}
+
+#qsomos{
+    height: 74vh;
+    background-image: url(https://i.imgur.com/f3Kr8Q1.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#nav{
+    height: 45vh;
+}
