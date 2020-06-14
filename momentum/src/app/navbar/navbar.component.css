@@ -9,3 +9,8 @@
     color: #0e6642;  
     font-size: 1.05em;
 }
+
+#linkright >li >a{
+    border: 1px #0e6642 solid;
+    border-radius: 5px;
+}
