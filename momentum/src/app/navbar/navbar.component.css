@@ -2,7 +2,11 @@
 
 .navbar {
     font-family: 'Open Sans', sans-serif;
-    color: #000000;
+    
+}
+
+.nav-item > a{
+    color: black;
 }
 
 .nav-item > a:hover{

@@ -8,7 +8,8 @@ ul{
 }
 
 .cor{
-  background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%);
+  background: linear-gradient(to bottom, #d3fbf0 20%, #32ccbc 100%);
+  /* background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%); */
   padding: 10px 0 10px 0;
 }
 
@@ -20,8 +21,16 @@ ul > li{
 margin: 10px 5px 10px 5px;
 }
 
+.social > a{
+  color: black;
+}
+
+ul > li > a{
+  color: black;
+}
+
 .social > a:hover{
-color: black;
+color: gray;
 }
 
 ul > li > a:hover{
