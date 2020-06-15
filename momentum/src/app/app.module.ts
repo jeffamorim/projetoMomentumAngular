@@ -18,6 +18,7 @@ import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
 import { FaqComponent } from './faq/faq.component';
 import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
     FormularioComponent,
     EditarComponent,
     DeletarComponent,
-    AcolhimentoComponent
+    AcolhimentoComponent,
+    EntrarComponent
   ],
   imports: [
     BrowserModule,
