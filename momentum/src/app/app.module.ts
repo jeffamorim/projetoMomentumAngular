@@ -16,7 +16,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
-import { FaqComponent } from './faq/faq.component'
+import { FaqComponent } from './faq/faq.component';
+import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { FaqComponent } from './faq/faq.component'
     FormularioComponent,
     EditarComponent,
     DeletarComponent,
-    FaqComponent
+    AcolhimentoComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { EditarComponent } from './editar/editar.component';
 import { DeletarComponent } from './deletar/deletar.component';
 import { FaqComponent } from './faq/faq.component';
+import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 
 const routes: Routes = [
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'editar/:id', component: EditarComponent },
-  { path: 'deletar/:id', component: DeletarComponent }
+  { path: 'deletar/:id', component: DeletarComponent },
+  { path: 'acolhimento', component: AcolhimentoComponent }
 
 ];
 
