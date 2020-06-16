@@ -5,22 +5,23 @@
       <table class="table table-hover">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Email</th>
-            <th scope="col">Senha</th>
-            <th></th>
-            <th></th>
+            <th scope="col" class="text-center">Id</th>
+            <th scope="col" class="text-center">Nome</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col" class="text-center">Senha</th>
+            <th scope="col" class="text-center">Ações</th>
           </tr>
         </thead>
         <tbody *ngFor="let usuario of listaUsuarios">
           <tr>
-            <th scope="row"> {{ usuario.id }} </th>
-            <td> {{ usuario.nome }} </td>
-            <td> {{ usuario.email }} </td>
-            <td> {{ usuario.senha }} </td>
-            <td> <button class="btn btn-outline-warning" [routerLink]="['/editar', usuario.id]">Editar</button> </td>
-            <td> <button class="btn btn-outline-danger" [routerLink]="['/deletar', usuario.id]">Deletar</button> </td>
+            <th scope="row" class="text-center"> {{ usuario.id }} </th>
+            <td class="text-center"> {{ usuario.nome }} </td>
+            <td class="text-center"> {{ usuario.email }} </td>
+            <td class="text-center"> {{ usuario.senha }} </td>
+            <td class="text-center">
+              <button class="btn btn-outline-primary mr-4" [routerLink]="['/editar', usuario.id]">Alterar</button>
+              <button class="btn btn-outline-secondary" [routerLink]="['/deletar', usuario.id]">Excluir</button>
+            </td>
           </tr>
         </tbody>
       </table>

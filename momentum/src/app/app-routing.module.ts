@@ -15,7 +15,7 @@ const routes: Routes = [
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'sbrenos', component: SbrenosComponent },
+  { path: 'sobrenos', component: SbrenosComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'usuarios', component: UsuariosComponent },
