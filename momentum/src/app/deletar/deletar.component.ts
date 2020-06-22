@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DeletarComponent implements OnInit {
 
-  usuario: Usuario
+  usuario: Usuario = new Usuario;
 
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
@@ -20,15 +20,15 @@ export class DeletarComponent implements OnInit {
   }
 
   findById(id: number) {
-    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario)=> {
+    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuario = resp;
     }, err => {
       console.log(`Erro: ${err.status}, não conseguimos pegar o ID`)
     })
   }
 
-  btnSim () {
-    this.usuarioService.deleteUsuario(this.usuario.id).subscribe(()=>{
+  btnSim() {
+    this.usuarioService.deleteUsuario(this.usuario.id).subscribe(() => {
       this.router.navigate(['/usuarios'])
     })
   }

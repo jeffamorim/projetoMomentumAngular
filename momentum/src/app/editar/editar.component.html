@@ -3,7 +3,7 @@
     <h2 class="d-flex justify-content-center">Alteração de dados</h2>
     <hr class="mb-5">
 
-    <form>
+    <!-- <form>
 
         <div class="form-group">
             <label for="nome">Nome</label>
@@ -41,6 +41,88 @@
             <button type="submit" class="btn btn-success" (click)="salvar()">Salvar</button>
         </div>
 
-    </form>
+    </form> -->
 
-</div>
+
+    <div class="row">
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-8 mx-auto">
+
+                    <!-- form card sign up -->
+                    <div class="card rounded shadow shadow-sm mt-3">
+                        <div id="edicao" class="d-flex justify-content-center align-items-center">
+                            <img src="../assets/card-editar.jpg" width="150" height="150"
+                                alt="Imagem Ilustrativa que auxilia na caracterização do estilo da página de edição.">
+                        </div>
+
+                        <div class="card-header text-center">
+                            <h3 class="mb-0">Altere o seu perfil</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off" id="formCadastro" novalidate="">
+                                <div class="form-group">
+                                    <label for="uname1">Nome*</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="nome"
+                                        id="uname1" required="" placeholder="Como prefere ser chamada(o)?"
+                                        [(ngModel)]="usuario.nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email*</label>
+                                    <input type="email" class="form-control form-control-lg rounded-0" name="email"
+                                        id="email" required="" placeholder="Informe o seu melhor email."
+                                        [(ngModel)]="usuario.email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Senha*</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1"
+                                        required="" autocomplete="new-password" name="senha"
+                                        placeholder="Proteja-se! Informe uma senha." [(ngModel)]="usuario.senha">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pwd2">Confirmar senha*</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd2"
+                                        required="" autocomplete="new-password"
+                                        placeholder="Proteja-se mais ainda! Confirme sua senha." name="confirmaSenha"
+                                        [(ngModel)]="usuario.confirmaSenha">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="telefone"
+                                        id="telefone" placeholder="Informe um telefone." [(ngModel)]="usuario.telefone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dtNascimento">Data de nascimento*</label>
+                                    <input type="date" class="form-control form-control-lg rounded-0"
+                                        name="dtNascimento" id="dtNascimento" required=""
+                                        [(ngModel)]="usuario.dtNascimento">
+                                </div>
+
+                                <button id="btn1" class="btn btn-block mb-2" (click)="salvar()">Salvar dados!</button>
+
+                                <div>
+                                    <div class="alert alert-danger text-center mt-3" role="alert" id="teste"
+                                        style="visibility: hidden">
+
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+
+                </div>
+                <!--/row-->
+
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+
+
+    </div>
