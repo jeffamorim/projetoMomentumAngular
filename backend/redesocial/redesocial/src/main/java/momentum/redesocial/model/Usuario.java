@@ -10,8 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+
 
 @Entity
 @Table(name = "tb_usuario")
@@ -23,26 +26,29 @@ public class Usuario {
 	private long id;
 	
 	@NotNull
-	@Size(min = 2, max = 80)
+	@Size(min = 2, max = 80, message = "Presica ter entre 2 e 80 caracteres!")
 	@Column(name = "nm_nome", nullable = false, length = 80)
 	private String nome;
 	
 	@NotNull
-	@Size(min = 16, max = 120)
+	@Size(min = 16, max = 120, message = "Presica ter entre 16 e 120 caracteres!")
 	@Column(name = "nm_email", nullable = false, length = 120)
+	@Email
 	private String email;
 	
 	@NotNull
-	@Size(min = 6, max = 40)
-	@Column(name = "nm_senha", nullable = false, length = 40)
+	@Size(min = 6, max = 256, message = "Presica ter entre 6 e 40 caracteres!")
+	@Column(name = "nm_senha", nullable = false, length = 256)
 	private String senha;
 	
 	
-	@Size(min = 2, max = 20)
+	@Size(min = 11, max = 20, message = "Presica ter entre 11 e 20 caracteres!")
 	@Column(name = "cd_telefone", length = 20)
 	private Long telefone;
 	
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "dt_nascimento")
 	private Date dtNascimento;
 
 	public long getId() {
@@ -93,6 +99,6 @@ public class Usuario {
 		this.dtNascimento = dtNascimento;
 	}
 
-
+	
 	
 }
