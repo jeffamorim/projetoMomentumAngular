@@ -28,4 +28,6 @@ export class UsuarioService {
   deleteUsuario(id: number) {
     return this.http.delete(`http://localhost:8080/usuarios/${id}`)
   }
+
+  
 }

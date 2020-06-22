@@ -1,6 +1,7 @@
 package momentum.redesocial.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import momentum.redesocial.model.Usuario;
+import momentum.redesocial.model.UsuarioLogado;
+import momentum.redesocial.model.UsuarioLogin;
 import momentum.redesocial.repository.UsuarioRepository;
+import momentum.redesocial.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -25,6 +29,9 @@ public class UsuarioController {
 
 		@Autowired
 		private UsuarioRepository repository;
+		
+		@Autowired
+		private UsuarioService usuarioService;
 		
 		@GetMapping
 		public ResponseEntity<List<Usuario>> GetAll() {
@@ -40,16 +47,29 @@ public class UsuarioController {
 		
 		@PostMapping
 		public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) {
-			return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
+			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
 		}
 		
 		@PutMapping
 		public ResponseEntity<Usuario> putUsuario(@RequestBody Usuario usuario) {
-			return ResponseEntity.status(HttpStatus.OK).body(repository.save(usuario));
+			return ResponseEntity.status(HttpStatus.OK).body(usuarioService.CadastrarUsuario(usuario));
 		}
 		
 		@DeleteMapping("/{id}")
 		public void deleteUsuario(@PathVariable long id) {
 			repository.deleteById(id);
 		}
+		
+		@PostMapping("/login")
+		public ResponseEntity<Object> Logar(@RequestBody UsuarioLogin usuarioLogin) {
+			Optional<UsuarioLogado> usuarioLogado = usuarioService.Logar(usuarioLogin);
+			
+			if(usuarioLogado.isPresent()) {
+				return ResponseEntity.ok(usuarioLogado.get());
+			}
+			
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Acesso não autorizado!");
+			
+		}
+		
 }
