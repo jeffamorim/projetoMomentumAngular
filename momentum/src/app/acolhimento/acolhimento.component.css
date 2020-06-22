@@ -1,0 +1,26 @@
+.card{
+    margin: 5% 0%;
+    -webkit-box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
+    box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
+  }
+  
+  .card-body{
+    /* margin: 0% 0% 0% 3%;
+    padding: 6% 0%;
+    
+     */
+  }
+
+  #btn1{
+    color: #27846a;
+    background: white;
+    border-color: #27846a;
+}
+
+#btn1:hover{
+    background: #27846a;
+    color: white;
+}
+  
+  
