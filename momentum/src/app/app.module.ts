@@ -20,6 +20,7 @@ import { FaqComponent } from './faq/faq.component';
 import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     DeletarComponent,
     AcolhimentoComponent,
     EntrarComponent,
-    PerfilComponent
+    PerfilComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
