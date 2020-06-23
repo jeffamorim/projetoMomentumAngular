@@ -19,6 +19,7 @@ import { DeletarComponent } from './deletar/deletar.component';
 import { FaqComponent } from './faq/faq.component';
 import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EntrarComponent } from './entrar/entrar.component';
     EditarComponent,
     DeletarComponent,
     AcolhimentoComponent,
-    EntrarComponent
+    EntrarComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
