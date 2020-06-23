@@ -7,9 +7,9 @@ import { Usuario } from '../model/Usuario';
 })
 export class UsuarioService {
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  getAllUsuarios(){
+  getAllUsuarios() {
     return this.http.get('http://localhost:8080/usuarios');
   }
 
@@ -29,5 +29,8 @@ export class UsuarioService {
     return this.http.delete(`http://localhost:8080/usuarios/${id}`)
   }
 
-  
+  postUsuarioLogin(usuario: Usuario) {
+    return this.http.post(`http://localhost:8080/usuarios/login`, usuario);
+  }
+
 }
