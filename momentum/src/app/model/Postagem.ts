@@ -1,7 +1,6 @@
 export class Postagem {
-    id: number
-    texto: string
-    data: Date
-    id_usuario: number
-    analise: boolean
+
+    public id_postagem: number
+    public textoPostagem: string
+    public data_postagem: Date
 }

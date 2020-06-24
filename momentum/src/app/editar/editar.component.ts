@@ -14,6 +14,8 @@ export class EditarComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
+  confirma: Usuario = new Usuario;
+
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class EditarComponent implements OnInit {
 
   salvar() {
 
-    
+
 
     this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp;

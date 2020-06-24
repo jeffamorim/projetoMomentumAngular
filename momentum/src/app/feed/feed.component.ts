@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { PostagemService } from '../service/postagem.service';
+import { PostagemService } from '../service/postagem.service';
 import { Postagem } from '../model/Postagem'
 
 @Component({
@@ -13,28 +13,28 @@ export class FeedComponent implements OnInit {
   postagem: Postagem = new Postagem
 
   //A linhas comentadas foram para testar em outra API
-  // key = 'data_postagem'
-  // reverse = true
+  key = 'data_postagem'
+  reverse = true
 
-  // constructor(private postagemService: PostagemService) {
+  constructor(private postagemService: PostagemService) {
 
-  // }
+  }
 
   ngOnInit(): void {
-    // this.findAllPostagem()
+    this.findAllPostagem()
   }
-  //   findAllPostagem() {
-  //     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-  //       this.listaPostagem = resp
+    findAllPostagem() {
+      this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+        this.listaPostagem = resp
 
-  //     })
-  //   }
+      })
+    }
 
-  //   publicar() {
-  //     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-  //       this.postagem = resp
-  //       location.assign('/feed')
-  //     })
-  //   }
+    publicar() {
+      this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+        this.postagem = resp
+        location.assign('/feed')
+      })
+    }
 }
 

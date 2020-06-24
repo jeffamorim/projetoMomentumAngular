@@ -12,17 +12,17 @@
                         <th scope="col" class="text-center">Id</th>
                         <th scope="col" class="text-center">Nome</th>
                         <th scope="col" class="text-center">Email</th>
-                        <th scope="col" class="text-center">Data de nascimento</th>
+       
                         <th scope="col" class="text-center">Telefone</th>
                         <th scope="col" class="text-center">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" class="text-center"> {{ usuario.id }} </th>
+                        <th scope="row" class="text-center"> {{ usuario.user_id }} </th>
                         <td class="text-center"> {{ usuario.nome }} </td>
                         <td class="text-center"> {{ usuario.email }} </td>
-                        <td class="text-center"> {{ usuario.dtNascimento | date: 'dd/MM/yyyy' }} </td>
+                
                         <td class="text-center"> {{ usuario.telefone }} </td>
                         <td class="text-center">
                             <button class="btn btn-outline-success mx-4" (click)="btnSim()">Sim</button>

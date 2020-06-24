@@ -14,7 +14,7 @@ export class UsuarioService {
   }
 
   postUsuario(usuario: Usuario) {
-    return this.http.post('http://localhost:8080/usuarios', usuario);
+    return this.http.post('http://localhost:8080/usuarios/cadastrar', usuario);
   }
 
   putUsuario(usuario: Usuario) {
@@ -30,7 +30,7 @@ export class UsuarioService {
   }
 
   postUsuarioLogin(usuario: Usuario) {
-    return this.http.post(`http://localhost:8080/usuarios/login`, usuario);
+    return this.http.post(`http://localhost:8080/usuarios/logar`, usuario);
   }
 
 }

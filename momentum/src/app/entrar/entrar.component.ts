@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../service/usuario.service';
-import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
+import { UserLogin } from '../model/UserLogin';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,18 +10,26 @@ import { Router } from '@angular/router';
 })
 export class EntrarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario();
+  user: UserLogin = new UserLogin
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   logar() {
-    this.usuarioService.postUsuarioLogin(this.usuario).subscribe((resp: Usuario) => {
-      this.usuario = resp
-      this.router.navigate(['/usuarios']);
-    });
+    this.authService.login(this.user).subscribe((resp: UserLogin) => {
+      this.user = resp;
+      localStorage.setItem("token", resp.token);
+      localStorage.setItem("usuario", resp.usuario)
+      localStorage.setItem("logado", "true")
+
+
+      this.router.navigate(['/feed']);
+      location.assign('/feed')
+    }, (erro) => {
+      alert("Usuário ou senha inválidos")
+    })
   }
 
 

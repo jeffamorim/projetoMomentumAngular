@@ -28,7 +28,7 @@ export class DeletarComponent implements OnInit {
   }
 
   btnSim() {
-    this.usuarioService.deleteUsuario(this.usuario.id).subscribe(() => {
+    this.usuarioService.deleteUsuario(this.usuario.user_id).subscribe(() => {
       this.router.navigate(['/usuarios'])
     })
   }

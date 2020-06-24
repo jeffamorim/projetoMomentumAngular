@@ -1,11 +1,10 @@
 export class Usuario {
 
-    public id: number
+    public user_id: number
+    public senha: string
+    public usuario: string
     public nome: string
     public email: string
-    public senha: string
     public telefone: number
-    public dtNascimento: Date
-    public confirmaSenha: string
 
 }

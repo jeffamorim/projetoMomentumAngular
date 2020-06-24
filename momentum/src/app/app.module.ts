@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,8 @@ import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { FeedComponent } from './feed/feed.component';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 @NgModule({
   declarations: [
@@ -37,16 +39,17 @@ import { FeedComponent } from './feed/feed.component';
     AcolhimentoComponent,
     EntrarComponent,
     PerfilComponent,
-    FeedComponent
+    FeedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
