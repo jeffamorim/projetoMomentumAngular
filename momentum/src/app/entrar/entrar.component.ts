@@ -20,7 +20,7 @@ export class EntrarComponent implements OnInit {
   logar() {
     this.usuarioService.postUsuarioLogin(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/usuarios']);
+      this.router.navigate(['/feed']);
     });
   }
 

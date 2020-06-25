@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row mb-5">
+
+        <div class="col-md-4">
+            <div class="card border-0 " style="width: 18rem;">
+                <div class="d-flex justify-content-center">
+                    <img class="card-img-top rounded-circle w-75" src="../../assets/download.jpg"
+                        alt="Imagem de capa do card">
+                </div>
+                <div class="card-body ">
+                    <h5 class="card-title text-center">Nome</h5>
+                    <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit.</p>
+
+                    <a class="btn btn-info d-flex justify-content-center mb-3" routerLink="/feed">Feed</a>
+
+                    <a class="btn btn-dark d-flex justify-content-center" routerLink="/perfil">Perfil</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 d-flex flex-column justify-content-center align-items-center">
+            <h3 class="mb-5 text-center">Exclusão de postagem</h3>
+
+            <div class="publicacao">
+                <p>{{postagem.texto}}</p>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-end">
+                        <p class="data">{{postagem.data | date: 'dd/MM/yyyy'}} às
+                            {{postagem.data | date: 'HH:mm'}} </p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mt-5 mb-3">Tem certeza?</h4>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-danger mr-3" (click)="btnNao()">Não</button>
+                <button type="button" class="btn btn-outline-success ml-3" (click)="btnSim()">Sim</button>
+            </div>
+        </div>
+
+    </div>
+</div>

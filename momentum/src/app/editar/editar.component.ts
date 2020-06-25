@@ -30,9 +30,6 @@ export class EditarComponent implements OnInit {
   }
 
   salvar() {
-
-    
-
     this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp;
       this.router.navigate(['/usuarios'])

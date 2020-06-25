@@ -1,50 +1,166 @@
 <div class="container">
-    <div class="row mt-5 mb-5">
-        <div class="col-md-4">
-            <div class="card border-0 " style="width: 18rem;">
-                <div class="d-flex justify-content-center">
-                    <img class="card-img-top rounded-circle w-75" src="../../assets/download.jpg"
-                        alt="Imagem de capa do card">
+
+    <nav>
+        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                aria-controls="nav-home" aria-selected="true">Minhas publicações</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                aria-controls="nav-profile" aria-selected="false">Depoimentos</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                aria-controls="nav-contact" aria-selected="false">Alterar Perfil</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <div class="row mt-5 mb-5">
+                <div class="col-md-4">
+                    <div class="card border-0 " style="width: 18rem;">
+                        <div class="d-flex justify-content-center">
+                            <img class="card-img-top rounded-circle w-75" src="../../assets/download.jpg"
+                                alt="Imagem de capa do card">
+                        </div>
+                        <div class="card-body ">
+                            <h5 class="card-title text-center">Nome</h5>
+                            <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.</p>
+
+                            <a class="btn btn-info d-flex justify-content-center mb-3" routerLink="/feed">Feed</a>
+
+                            <a target="_blank" class="btn btn-danger d-flex justify-content-center">Sair</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body ">
-                    <h5 class="card-title text-center">Nome</h5>
-                    <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.</p>
 
-                    <a class="btn btn-info d-flex justify-content-center mb-3" target="_blank">Feed</a>
+                <div class="col-md-8">
+                    <h2 class="text-center">Reveja as suas publicações</h2>
+                    <div class="container caixa-publicacao">
 
-                    <a target="_blank" class="btn btn-danger d-flex justify-content-center">Excluir</a>
+                        <div class="publicacao">
+
+                            <p>Texto da postagem</p>
+                            <div class="d-flex justify-content-end">
+                                <p class="data">Data da postagem às tais horas.</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <div class="col-md-8">
-            <h2>Alterar Perfil</h2>
-            <form>
-                <div class="form-group">
-                    <label for="user">Usuário</label>
-                    <input type="text" class="form-control" id="">
-                </div>
-                <div class="form-group">
-                    <label for="date">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="">
-                </div>
-                <div class="form-group">
-                    <label for="InputEmail1">Email</label>
-                    <input type="email" class="form-control" id="">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary">Editar</button>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+            <div class="row mt-5 mb-5">
+                <div class="col-md-4">
+                    <div class="card border-0 " style="width: 18rem;">
+                        <div class="d-flex justify-content-center">
+                            <img class="card-img-top rounded-circle w-75" src="../../assets/download.jpg"
+                                alt="Imagem de capa do card">
+                        </div>
+                        <div class="card-body ">
+                            <h5 class="card-title text-center">Nome</h5>
+                            <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.</p>
+
+                            <a class="btn btn-info d-flex justify-content-center mb-3" routerLink="/feed">Feed</a>
+
+                            <a target="_blank" class="btn btn-danger d-flex justify-content-center">Sair</a>
+                        </div>
+                    </div>
                 </div>
 
-            </form>
+                <div class="col-md-8">
+                    <h2 class="text-center">Diferente</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="user">Usuário</label>
+                            <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputEmail1">Email</label>
+                            <input type="email" class="form-control" id="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+            <div class="row mt-5 mb-5">
+                <div class="col-md-4">
+                    <div class="card border-0 " style="width: 18rem;">
+                        <div class="d-flex justify-content-center">
+                            <img class="card-img-top rounded-circle w-75" src="../../assets/download.jpg"
+                                alt="Imagem de capa do card">
+                        </div>
+                        <div class="card-body ">
+                            <h5 class="card-title text-center">Nome</h5>
+                            <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit.</p>
+
+                            <a class="btn btn-info d-flex justify-content-center mb-3" routerLink="/feed">Feed</a>
+
+                            <a target="_blank" class="btn btn-danger d-flex justify-content-center">Sair</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <h2 class="text-center">Alterar Perfil</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome*</label>
+                            <input type="text" class="form-control" id="nome" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" class="form-control" id="email" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha*</label>
+                            <input type="password" class="form-control" id="senha" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmaSenha">Confirmar senha*</label>
+                            <input type="password" class="form-control" id="confirmaSenha" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" class="form-control" id="telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="dtNascimento">Data de Nascimento*</label>
+                            <input type="date" class="form-control" id="dtNascimento" required="">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary">Alterar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
+
+</div>

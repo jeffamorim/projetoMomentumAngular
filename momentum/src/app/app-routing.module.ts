@@ -12,6 +12,8 @@ import { AcolhimentoComponent } from './acolhimento/acolhimento.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { EditarPostagemComponent } from './editar-postagem/editar-postagem.component';
+import { DeletarPostagemComponent } from './deletar-postagem/deletar-postagem.component';
 
 const routes: Routes = [
 
@@ -27,7 +29,9 @@ const routes: Routes = [
   { path: 'acolhimento', component: AcolhimentoComponent },
   { path: 'entrar', component: EntrarComponent },
   { path: 'feed', component: FeedComponent },
-  { path: 'perfil', component: PerfilComponent }
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'editar-postagem/:id', component: EditarPostagemComponent },
+  { path: 'excluir-postagem/:id', component: DeletarPostagemComponent }
 
 ];
 

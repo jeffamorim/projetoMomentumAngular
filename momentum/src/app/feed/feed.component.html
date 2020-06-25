@@ -7,7 +7,7 @@
         <div class="post">
             <div class="form-group">
                 <textarea name="postagem" id="post" cols="50" rows="3" placeholder="Digite sua publicação"
-                    [(ngModel)]="postagem.textoPostagem"></textarea>
+                    [(ngModel)]="postagem.texto"></textarea>
             </div>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-info" (click)="publicar()">Postar</button>
@@ -15,16 +15,33 @@
         </div>
     </div>
 
-    <div class="container caixa-publicacao">
-
-        <div class="publicacao" *ngFor="let postagem of listaPostagem | orderBy : key : reverse">
-
-
-            <p>{{postagem.textoPostagem}}</p>
-            <div class="d-flex justify-content-end">
-                <p class="data">{{postagem.data_postagem | date: 'dd/MM/yyyy'}} às
-                    {{postagem.data_postagem | date: 'HH:mm'}} </p>
-            </div>
-
+    <div class="row d-flex justify-content-center mt-5" *ngIf='alerta'>
+        <div class="col-md-4 alert alert-success alert-dismissible fade show text-center" role="alert">
+            Postagem excluída com sucesso!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </div>
+
+    <div class="container caixa-publicacao">
+
+        <div class="publicacao mb-4" *ngFor="let postagem of listaPostagem | orderBy : key : reverse">
+            <p>{{postagem.texto}}</p>
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-start">
+                    <button class="btn btn-outline-primary mr-2"
+                        [routerLink]="['/editar-postagem', postagem.id]">Alterar</button>
+                    <button class="btn btn-outline-secondary"
+                        [routerLink]="['/excluir-postagem', postagem.id]">Excluir</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end mt-2">
+                    <p class="data">{{postagem.data | date: 'dd/MM/yyyy'}} às
+                        {{postagem.data | date: 'HH:mm'}} </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

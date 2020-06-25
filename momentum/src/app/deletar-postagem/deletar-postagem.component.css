@@ -1,0 +1,13 @@
+.publicacao{
+    width: 575px;
+    box-shadow: 2px 2px 2px 2px gray;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    margin: 10px 0 0 10px;
+  
+}
+
+.data{
+    font-size:12px;
+}
