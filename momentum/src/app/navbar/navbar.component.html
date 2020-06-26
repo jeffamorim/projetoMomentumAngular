@@ -12,14 +12,17 @@
 
         <div id="links" class="collapse navbar-collapse" id="navbarCollapse">
             <div id="navcenter" class="nav navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link mr-3" routerLink="/home">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link mr-3" routerLink="/sobrenos">Sobre Nós</a></li>
-                <li class="nav-item"><a class="nav-link mr-3" routerLink="/acolhimento">Acolhimento</a></li>
-                <li class="nav-item"><a class="nav-link mr-3" routerLink="/contato">Contato</a></li>
+                <li class="nav-item" (click)="estadoHome()"><a class="nav-link mr-3"  routerLink="/home">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link mr-3"  routerLink="/sobrenos" *ngIf="home">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link mr-3"  routerLink="/acolhimento" *ngIf="home">Acolhimento</a></li>
+                <li class="nav-item"><a class="nav-link mr-3"  routerLink="/contato" *ngIf="home">Contato</a></li>
+                <li class="nav-item" (click)="estadoHome()"><a class="nav-link mr-3"  routerLink="/feed" *ngIf="logado">Feed</a></li>
+                <li class="nav-item" (click)="estadoHome()"><a class="nav-link mr-3"  routerLink="/perfil" *ngIf="logado">Perfil</a></li>
             </div>
             <div id="linkright" class="navbar-nav ml-auto">
                 <button id="btn1" class="btn  mb-2 mr-2" routerLink="/formulario" *ngIf="entrar">Cadastro</button>
                 <button id="btn1" class="btn  mb-2" routerLink="/entrar" *ngIf="entrar">Entrar</button>
+                <h4 *ngIf="logado" class="nomeUsuario">{{nome}}</h4>
                 <button id="btn1" class="btn  mb-2" (click)="sair()" *ngIf="logado">Sair</button>
 
             </div>

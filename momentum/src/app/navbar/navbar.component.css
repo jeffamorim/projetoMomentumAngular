@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 #btn1{
+    margin-top: 8px;
     color: #27846a;
     background: white;
     border-color: #27846a;
@@ -35,4 +36,9 @@
         width: 90px;
     }
 
+}
+
+.nomeUsuario{
+    padding-right: 20px;
+    margin-top: 11px;
 }

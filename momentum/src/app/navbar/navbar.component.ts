@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
+import { Usuario } from '../model/Usuario';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -8,17 +10,42 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  logado: boolean = false
-  entrar : boolean = true
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  usuario : Usuario[]
+  nomeUsuario : Usuario = new Usuario
+  logado : boolean = false
+  entrar : boolean = true
+  inicio : boolean = false
+  home: boolean = false
+  nome : string
+
+  constructor(private route: ActivatedRoute, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
     if(localStorage.getItem("logado") == "true") {
       this.logado = true
       this.entrar = false
+      this.nome = localStorage.getItem("usuario")
     }
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart){
+        this.home = true
+      } 
+      else if(event instanceof NavigationStart || this.location.path() == "/feed") {
+        this.home = false
+      }
+      });
+    
+  }
+
+  estadoHome(){
+    if(this.location.path() == "/home") {
+      this.home = true
+    }
+    else {
+      this.home = false
+    }
   }
 
   sair() {

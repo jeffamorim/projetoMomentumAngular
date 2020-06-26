@@ -12,7 +12,6 @@ export class FeedComponent implements OnInit {
   listaPostagem: Postagem[]
   postagem: Postagem = new Postagem
 
-  //A linhas comentadas foram para testar em outra API
   key = 'data_postagem';
   reverse = true;
   p : number = 1;
