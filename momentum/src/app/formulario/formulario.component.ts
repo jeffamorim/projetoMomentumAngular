@@ -17,23 +17,32 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   cadastrar() {
 
     function mostrarMensagemErro(mensagem) {
-      let teste = document.getElementById("teste")
-      teste.innerHTML = mensagem
-      teste.style.visibility = "visible";
+      let aviso = document.getElementById("aviso")
+      aviso.innerHTML = mensagem
+      aviso.style.visibility = "visible";
     }
 
     function esconderMensagemErro() {
-      document.getElementById("teste").style.visibility = "hidden";
+      document.getElementById("aviso").style.visibility = "hidden";
+    }
+
+    function mostrarMensagemSucesso(mensagem) {
+      let aviso = document.getElementById("aviso")
+      aviso.innerHTML = mensagem
+      aviso.style.visibility = "visible";
+      aviso.className = "alert alert-success text-center mt-3"
     }
 
     let nome = this.usuario.nome;
     let email = this.usuario.email;
     let senha = this.usuario.senha;
-    let confirmaSenha = this.usuario.confirmaSenha;
     let data = this.usuario.dtNascimento;
+    let confirmaSenha = this.usuario.confirmaSenha;
+
 
     if (!(nome == null) && !(email == null) && !(senha == null) && !(data == null)) {
       if (senha != confirmaSenha) {
@@ -55,6 +64,7 @@ export class FormularioComponent implements OnInit {
       else {
         console.log("Correto!")
         esconderMensagemErro()
+        mostrarMensagemSucesso("Usuario cadastrado com sucesso!")
       }
     }
     else {
@@ -66,11 +76,12 @@ export class FormularioComponent implements OnInit {
 
     this.usuarioService.postUsuario(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/usuarios'])
+      this.router.navigate(['/perfil'])
     });
   }
 
 }
+
 
 
 

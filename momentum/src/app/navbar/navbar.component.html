@@ -16,10 +16,19 @@
                 <li class="nav-item"><a class="nav-link mr-3" routerLink="/sobrenos">Sobre Nós</a></li>
                 <li class="nav-item"><a class="nav-link mr-3" routerLink="/acolhimento">Acolhimento</a></li>
                 <li class="nav-item"><a class="nav-link mr-3" routerLink="/contato">Contato</a></li>
+                <div *ngIf="auth.esconder()">
+                    <li class="nav-item"><a class="nav-link mr-3" routerLink="/feed">Feed</a></li>
+                </div>
+                <div *ngIf="auth.esconder()">
+                    <li class="nav-item"><a class="nav-link mr-3" routerLink="/perfil">perfil</a></li>
+                </div>
+
             </div>
-            <div id="linkright" class="navbar-nav ml-auto">
-                <button id="btn1" class="btn  mb-2 mr-2" routerLink="/formulario">Cadastro</button>
-                <button id="btn1" class="btn  mb-2" routerLink="/entrar">Entrar</button>
+            <div *ngIf='auth.esconderNav()'>
+                <div id="linkright" class="navbar-nav ml-auto">
+                    <button id="btn1" class="btn  mb-2 mr-2" routerLink="/formulario">Cadastro</button>
+                    <button id="btn1" class="btn  mb-2" routerLink="/entrar">Entrar</button>
+                </div>
             </div>
         </div>
     </div>

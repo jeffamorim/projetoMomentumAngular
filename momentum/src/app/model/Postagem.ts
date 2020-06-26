@@ -3,5 +3,5 @@ export class Postagem {
     texto: string
     data: Date
     id_usuario: number
-    analise: boolean
+    analise: boolean = false
 }

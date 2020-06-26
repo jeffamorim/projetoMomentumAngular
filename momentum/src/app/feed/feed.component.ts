@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Postagem } from '../model/Postagem'
 import { PostagemService } from '../service/postagem.service';
+import { Router } from '@angular/router';
+import { Usuario } from '../model/Usuario';
 
 @Component({
   selector: 'app-feed',
@@ -11,16 +13,24 @@ export class FeedComponent implements OnInit {
 
   listaPostagem: Postagem[]
   postagem: Postagem = new Postagem
+  usuario: Usuario = new Usuario;
 
 
   key = 'data'
   reverse = true
 
-  constructor(private postagemService: PostagemService) { }
+  constructor(private postagemService: PostagemService, private router: Router) { }
 
   alerta: boolean = false
 
   ngOnInit() {
+    let token = localStorage.getItem('token');
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
+    }
+
     this.findAllPostagem()
     let item: string = localStorage.getItem('delOk')
     if (item == 'true') {
@@ -41,6 +51,7 @@ export class FeedComponent implements OnInit {
 
   publicar() {
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem.id_usuario = this.usuario.id //Arrumar
       this.postagem = resp
       location.assign('/feed')
     })
