@@ -61,4 +61,16 @@
   
   .data{
     font-size:12px;
+    padding-top: 11px;
+    margin-left: 4px;
   }
+
+  .nomePostagem{
+    font-size: 1.2rem;
+  }
+
+.headerPost{
+  display: flex;
+  align-items: center;
+  
+}

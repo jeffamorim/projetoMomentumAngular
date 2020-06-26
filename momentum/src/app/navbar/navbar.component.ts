@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  logado: boolean = false
+  entrar : boolean = true
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("logado") == "true") {
+      this.logado = true
+      this.entrar = false
+    }
+
+  }
+
+  sair() {
+    localStorage.setItem("token", "");
+    localStorage.setItem("usuario", "")
+    localStorage.setItem("logado", "false")    
+    this.router.navigate(['/home']);
+    this.logado = false
+    this.entrar = true
+    location.assign('/home')
   }
 
 }

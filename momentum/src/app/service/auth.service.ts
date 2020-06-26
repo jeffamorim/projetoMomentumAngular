@@ -12,4 +12,5 @@ export class AuthService {
   login(user: UserLogin) {
     return this.http.post('http://localhost:8080/usuarios/logar', user)
   }
+  
 }

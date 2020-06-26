@@ -55,8 +55,8 @@ export class FormularioComponent implements OnInit {
 
       this.usuarioService.postUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
-        alert('teste')
-        this.router.navigate(['/feed'])
+        alert('Agora faço login')
+        this.router.navigate(['/entrar'])
       })
     }
   }

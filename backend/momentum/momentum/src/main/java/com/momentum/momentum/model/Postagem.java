@@ -27,6 +27,18 @@ public class Postagem {
 	@Size(min=1, max=500)
 	private String textoPostagem;
 
+	
+	@Size(min=1, max=100)
+	private String usuario;
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
 	public long getId_postagem() {
 		return id_postagem;
 	}
