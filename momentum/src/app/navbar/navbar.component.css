@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+#btn1{
+    margin-top: 8px;
+    color: #27846a;
+    background: white;
+    border-color: #27846a;
+}
+
+#btn1:hover{
+    background: #27846a;
+    color: white;
+}
+
+
+.navbar {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-item > a{
+    color: black;
+}
+
+.nav-item > a:hover{
+    color: #0e6642;  
+    font-size: 1.05em;
+}
+
+#linkright >li >a{
+    border: 1px #0e6642 solid;
+    border-radius: 5px;
+}
+
+@media(max-width: 768px){
+    #btn1{
+        width: 90px;
+    }
+
+}
+
+.nomeUsuario{
+    padding-right: 20px;
+    margin-top: 11px;
+}

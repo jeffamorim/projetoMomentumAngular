@@ -1,0 +1,56 @@
+.color{
+    color: #27846a;
+}
+
+#texto1{
+    width: 80%;
+}
+
+#bt{
+    width: 30%;   
+}
+
+#btn1{
+    color: #27846a;
+    background: white;
+    border-color: #27846a;
+    width: 30%;   
+}
+
+#btn1:hover{
+    background: #27846a;
+    color: white;
+}
+
+
+#qsomos{
+
+    background-image: url(https://i.imgur.com/DAdTOjy.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
+}
+
+#nav{
+    height: 45vh;
+}
+
+@media (max-width: 1200px){
+    #qsomos{
+        
+        background-image: url(https://i.imgur.com/v2tgIEl.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 1920px 50px;
+    }
+}
+
+@media (max-width: 992px){
+    #qsomos{
+        background-image: url(https://i.imgur.com/v2tgIEl.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 1920px 10px;
+    }
+
+}

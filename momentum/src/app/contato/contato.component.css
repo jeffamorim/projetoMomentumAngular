@@ -1,0 +1,89 @@
+.container {
+    width: 400px;
+}
+.card {
+    background-image: linear-gradient(#20b2aa, #71d8ce, #c5c5c5);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Ubuntu, sans-serif;
+}
+
+.card, .message label {
+    font-weight: bold;
+    font-family: Ubuntu, sans-serif;
+}
+
+.card input, textarea {
+    background-color: rgba(225, 225, 225, 0.15);
+    border-radius: 10px;
+    box-shadow: -2px 4px 2px 0;
+}
+
+
+fa-icon {
+    color: rgb(240, 38, 38);
+}
+
+.form-group, .texto {
+    animation: fade 0.5s;
+    overflow: hidden;
+    
+}
+
+.form-group .md-form:nth-child(1) {
+    animation: move 600ms;
+}
+
+.form-group .md-form:nth-child(2) {
+    animation: move 500ms;
+    animation-delay: 100ms;
+    animation-fill-mode: backwards;
+}
+
+.form-group .md-form:nth-child(3) {
+    animation: move 400ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+.form-group .md-form:nth-child(4) {
+    animation: move 300ms;
+    animation-delay: 300ms;
+    animation-fill-mode: backwards;
+}
+
+.btn {
+    animation: move 200ms;
+    animation-delay: 300ms;
+    animation-fill-mode: backwards;
+}
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-35%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
