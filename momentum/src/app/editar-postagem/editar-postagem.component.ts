@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarPostagemComponent implements OnInit {
 
   postagem: Postagem = new Postagem();
+  nome: string = localStorage.getItem('nome');
 
   constructor(private postagemService: PostagemService, private route: ActivatedRoute, private router: Router) { }
 
@@ -18,6 +19,13 @@ export class EditarPostagemComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findById(id)
+
+    let token = localStorage.getItem('token');
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
+    }
 
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Postagem } from '../model/Postagem';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { UsuarioLogin } from '../model/UsuarioLogin';
 
 @Component({
   selector: 'app-perfil',
@@ -9,6 +9,8 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+
+  nome: String = localStorage.getItem('nome');
 
   constructor(private router: Router, public auth: AuthService) { }
 

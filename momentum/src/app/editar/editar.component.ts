@@ -21,6 +21,13 @@ export class EditarComponent implements OnInit {
     let id = this.route.snapshot.params['id'];
     this.findById(id)
 
+    let token = localStorage.getItem('token');
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
+    }
+
   }
 
   findById(id: number) {

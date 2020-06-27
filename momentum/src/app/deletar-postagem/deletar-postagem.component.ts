@@ -12,6 +12,7 @@ export class DeletarPostagemComponent implements OnInit {
 
   delOk: boolean = false
   postagem: Postagem = new Postagem();
+  nome: string = localStorage.getItem('nome');
 
   constructor(private postagemService: PostagemService, private route: ActivatedRoute, private router: Router) { }
 
@@ -19,6 +20,13 @@ export class DeletarPostagemComponent implements OnInit {
 
     let id: number = this.route.snapshot.params['id']
     this.findById(id)
+
+    let token = localStorage.getItem('token');
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
+    }
 
   }
 

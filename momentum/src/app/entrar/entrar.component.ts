@@ -29,6 +29,7 @@ export class EntrarComponent implements OnInit {
       this.usuarioLogin = resp
       localStorage.setItem('token', this.usuarioLogin.token)
       localStorage.setItem('id', this.usuarioLogin.codigo)
+      localStorage.setItem('nome', this.usuarioLogin.nome)
       this.router.navigate(['/perfil'])
     }, err => {
       mostrarMensagemErro("Houve um erro ao tentar entrar, verifique o email e senha fornecidos e tente novamente!")

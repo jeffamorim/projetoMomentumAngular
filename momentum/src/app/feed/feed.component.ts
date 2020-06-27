@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit {
   constructor(private postagemService: PostagemService, private router: Router) { }
 
   alerta: boolean = false
+  nome: String = localStorage.getItem('nome');
 
   ngOnInit() {
     let token = localStorage.getItem('token');
