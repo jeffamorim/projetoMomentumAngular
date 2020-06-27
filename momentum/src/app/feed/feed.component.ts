@@ -36,8 +36,7 @@ export class FeedComponent implements OnInit {
     let item: string = localStorage.getItem('delOk')
     if (item == 'true') {
       this.alerta = true
-      localStorage.clear()
-
+      localStorage.removeItem('delOk')
       setTimeout(() => {
         location.assign('/feed')
       }, 3000)

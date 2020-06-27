@@ -66,9 +66,24 @@
                     </div>
                 </div>
 
-                <div class="col-md-8">
-                    <h2 class="text-center">Diferente</h2>
-                    <p>Em construção</p>
+                <div class="col-md-8 d-flex flex-column justify-content-center align-items-center">
+                    <h2 class="text-center mb-5">Compartilhe o seu depoimento com todos</h2>
+                    <div class="post">
+                        <div class="form-group">
+                            <input type="text" class="titulo mb-3" placeholder="Insira um título para o seu depoimento"
+                                [(ngModel)]="depoimento.titulo">
+                            <textarea name="postagem" id="post" cols="50" rows="10"
+                                placeholder="Sinta-se a vontade para compartilhar algo com a comunidade"
+                                [(ngModel)]="depoimento.texto"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex justify-content-center w-100">
+                                    <button type="button" class="btn btn-info">Compartilhar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

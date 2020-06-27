@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { Depoimento } from '../model/Depoimento';
 
 @Component({
   selector: 'app-perfil',
@@ -11,6 +12,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class PerfilComponent implements OnInit {
 
   nome: String = localStorage.getItem('nome');
+  depoimento: Depoimento = new Depoimento();
 
   constructor(private router: Router, public auth: AuthService) { }
 
