@@ -25,9 +25,10 @@ export class EntrarComponent implements OnInit {
       aviso.style.visibility = "visible";
     }
 
-    this.authService.postUsuarioLogin(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+    this.authService.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
       this.usuarioLogin = resp
       localStorage.setItem('token', this.usuarioLogin.token)
+      localStorage.setItem('id', this.usuarioLogin.codigo)
       this.router.navigate(['/perfil'])
     }, err => {
       mostrarMensagemErro("Houve um erro ao tentar entrar, verifique o email e senha fornecidos e tente novamente!")

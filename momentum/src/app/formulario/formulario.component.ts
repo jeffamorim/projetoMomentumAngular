@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +12,7 @@ export class FormularioComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -74,9 +74,9 @@ export class FormularioComponent implements OnInit {
 
     console.log(this.usuario);
 
-    this.usuarioService.postUsuario(this.usuario).subscribe((resp: Usuario) => {
+    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/perfil'])
+      this.router.navigate(['/entrar'])
     });
   }
 

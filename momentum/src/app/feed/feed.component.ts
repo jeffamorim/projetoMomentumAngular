@@ -51,7 +51,6 @@ export class FeedComponent implements OnInit {
 
   publicar() {
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-      this.postagem.id_usuario = this.usuario.id //Arrumar
       this.postagem = resp
       location.assign('/feed')
     })

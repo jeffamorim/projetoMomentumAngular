@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { Usuario } from '../model/Usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  postUsuarioLogin(usuarioLogin: UsuarioLogin) {
+  logar(usuarioLogin: UsuarioLogin) {
     return this.http.post(`http://localhost:8080/usuarios/login`, usuarioLogin);
+  }
+
+  cadastrar(usuario: Usuario) {
+    return this.http.post('http://localhost:8080/usuarios', usuario);
   }
 
   esconder() {

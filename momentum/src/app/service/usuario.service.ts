@@ -17,10 +17,6 @@ export class UsuarioService {
     return this.http.get('http://localhost:8080/usuarios', this.token);
   }
 
-  postUsuario(usuario: Usuario) {
-    return this.http.post('http://localhost:8080/usuarios', usuario, this.token);
-  }
-
   putUsuario(usuario: Usuario) {
     return this.http.put('http://localhost:8080/usuarios', usuario, this.token);
   }
