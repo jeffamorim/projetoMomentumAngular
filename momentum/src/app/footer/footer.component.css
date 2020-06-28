@@ -1,0 +1,44 @@
+.logo{
+  width: 100px;
+  height: auto;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.cor{
+  background: linear-gradient(to bottom, #d3fbf0 20%, #32ccbc 100%);
+  /* background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%); */
+  padding: 10px 0 10px 0;
+}
+
+.titulo{
+  font-weight: bold;
+}
+
+ul > li{
+margin: 10px 5px 10px 5px;
+}
+
+.social > a{
+  color: black;
+}
+
+ul > li > a{
+  color: black;
+}
+
+.social > a:hover{
+color: gray;
+}
+
+ul > li > a:hover{
+  color: black;
+}
+
+@media screen and (max-width: 546px) {
+  .d-flex{
+    flex-direction: column;
+  }
+}
