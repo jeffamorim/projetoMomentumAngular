@@ -20,7 +20,7 @@ import com.momentum.momentum.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/postagem")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	
 	@Autowired

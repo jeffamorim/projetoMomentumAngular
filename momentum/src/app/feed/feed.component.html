@@ -15,21 +15,39 @@
         </div>
     </div>
 
+    <div class="row d-flex justify-content-center mt-5" *ngIf='alerta'>
+        <div class="col-md-5 alert alert-success alert-dismissible fade show text-center" role="alert">
+            Postagem excluída com sucesso!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
     <div class="container caixa-publicacao">
 
         <!-- Paginação implementada, valor maior que 10 publicações -->
-        <div class="publicacao" *ngFor="let postagem of listaPostagem | orderBy : key : reverse | paginate: { itemsPerPage : 10, currentPage : p }">
+        <div class="publicacao mb-3"
+            *ngFor="let postagem of listaPostagem | orderBy : key : reverse | paginate: { itemsPerPage : 10, currentPage : p }">
             <div class="headerPost">
                 <h6 class="nomePostagem">{{postagem.usuario}} -</h6>
                 <p class="data">{{postagem.data_postagem | date: 'dd/MM/yyyy'}} às
                     {{postagem.data_postagem | date: 'HH:mm'}} </p>
             </div>
             <p>{{postagem.textoPostagem}}</p>
-            
-        </div>
-        
-    </div>
-            <div class="d-flex justify-content-center mb-3" *ngIf="pagina">
-                <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próxima">
-                </pagination-controls>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end">
+                    <button class="btn btn-outline-primary mx-3"
+                        [routerLink]="['/editar-postagem', postagem.id_postagem]">Editar</button>
+                    <button class="btn btn-outline-secondary"
+                        [routerLink]="['/excluir-postagem', postagem.id_postagem]">Excluir</button>
+                </div>
             </div>
+        </div>
+
+    </div>
+    <div class="d-flex justify-content-center mb-3" *ngIf="pagina">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próxima">
+        </pagination-controls>
+    </div>
+</div>

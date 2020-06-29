@@ -14,33 +14,44 @@ export class FeedComponent implements OnInit {
 
   key = 'data_postagem';
   reverse = true;
-  p : number = 1;
+  p: number = 1;
   pagina: boolean = false;
-  nome : string;
+  nome: string;
+  alerta: boolean = false
 
   constructor(private postagemService: PostagemService) {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.findAllPostagem()
     this.nome = localStorage.getItem("usuario")
-  }
-    findAllPostagem() {
-      this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
-        this.listaPostagem = resp
-        if(this.listaPostagem.length > 10) {
-          this.pagina = true;
-        }
-      })
-    }
+    let item: string = localStorage.getItem('delOk')
 
-    publicar() {
-      this.postagem.usuario = localStorage.getItem("usuario")
-      this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-        this.postagem = resp
+    if (item == "true") {
+      this.alerta = true
+      localStorage.removeItem('delOk')
+      setTimeout(() => {
         location.assign('/feed')
-      })
+      }, 2000)
     }
+  }
+
+  findAllPostagem() {
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
+      this.listaPostagem = resp
+      if (this.listaPostagem.length > 10) {
+        this.pagina = true;
+      }
+    })
+  }
+
+  publicar() {
+    this.postagem.usuario = localStorage.getItem("usuario")
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
+      location.assign('/feed')
+    })
+  }
 }
 

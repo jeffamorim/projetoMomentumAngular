@@ -12,25 +12,30 @@ export class EntrarComponent implements OnInit {
 
   user: UserLogin = new UserLogin
 
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   logar() {
+
+    function mostrarMensagemErro(mensagem) {
+      let aviso = document.getElementById("aviso")
+      aviso.innerHTML = mensagem
+      aviso.style.visibility = "visible";
+    }
+
     this.authService.login(this.user).subscribe((resp: UserLogin) => {
       this.user = resp;
       localStorage.setItem("token", resp.token);
       localStorage.setItem("usuario", resp.usuario)
       localStorage.setItem("logado", "true")
-
-
       this.router.navigate(['/feed']);
       location.assign('/feed')
-    }, (erro) => {
-      alert("Usuário ou senha inválidos")
+    }, err => {
+      mostrarMensagemErro("Houve um erro ao tentar entrar, verifique o usuario e senha fornecidos e tente novamente!")
     })
   }
-
 
 }

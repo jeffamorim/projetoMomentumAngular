@@ -23,6 +23,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { FeedComponent } from './feed/feed.component';
 import { OrderModule } from 'ngx-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { EditarPostagemComponent } from './editar-postagem/editar-postagem.component';
+import { ExcluirPostagemComponent } from './excluir-postagem/excluir-postagem.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     EntrarComponent,
     PerfilComponent,
     FeedComponent,
+    EditarPostagemComponent,
+    ExcluirPostagemComponent,
   ],
   imports: [
     BrowserModule,
