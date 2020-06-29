@@ -25,7 +25,7 @@
 
 #qsomos{
 
-    background-image: url(https://i.imgur.com/DAdTOjy.png);
+    background-image: url(/momentum/src/assets/img/fundo.png);
     background-repeat: no-repeat;
     background-position: bottom;
     
@@ -38,7 +38,7 @@
 @media (max-width: 1200px){
     #qsomos{
         
-        background-image: url(https://i.imgur.com/v2tgIEl.png);
+        background-image: url(/momentum/src/assets/img/fundo.png);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: 1920px 50px;
@@ -47,7 +47,7 @@
 
 @media (max-width: 992px){
     #qsomos{
-        background-image: url(https://i.imgur.com/v2tgIEl.png);
+        background-image: url(/momentum/src/assets/img/fundo.png);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: 1920px 10px;

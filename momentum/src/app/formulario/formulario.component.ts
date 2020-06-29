@@ -15,7 +15,10 @@ export class FormularioComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
+    window.scroll(0, 0);
+  
   }
 
   confirmaSenha(event: any) {
