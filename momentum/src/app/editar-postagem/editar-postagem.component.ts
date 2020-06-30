@@ -20,11 +20,11 @@ export class EditarPostagemComponent implements OnInit {
     let id = this.route.snapshot.params['id']
     this.findById(id)
 
-    let token = localStorage.getItem('token');
+    let admin = localStorage.getItem('admin');
 
-    if (token == null) {
-      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
-      this.router.navigate(['/entrar']);
+    if (admin == "false") {
+      alert('Você não tem permissão para acessar essa área!')
+      this.router.navigate(['/home']);
     }
 
   }

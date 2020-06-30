@@ -1,6 +1,5 @@
 package com.momentum.momentum.model;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,32 +20,31 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long user_id;
 	
-	@Column(unique = true, length = 100)
+	@Column(unique = true, length = 100, nullable = false)
 	@Size(min = 2, max = 100)
 	@NotNull
 	private String usuario;
 	
-	@Size(min = 6, max = 100)
+	@Size(min = 6, max = 100, message = "Senha: mínimo de 6 caracteres")
 	@NotNull
 	private String senha;
 	
-	@Size(min = 2, max = 100)
+	@Size(min = 2, max = 100, message = "Nome: mínimo de 2 caracteres")
 	@NotNull
 	private String nome;
 	
-	@Size(min = 6, max = 100)
+	@Size(min = 6, max = 100, message = "Email: mínimo de 6 caracteres")
 	@NotNull
+	@Email
 	private String email;
 	
 	@NotNull
 	@Column(length = 100)
-	private long telefone;
+	private String telefone;
 	
 	@NotNull
 	@Column(columnDefinition = "boolean default false")
 	private boolean admin = false;
-
-	
 
 
 	public boolean isAdmin() {
@@ -59,11 +55,11 @@ public class Usuario {
 		this.admin = admin;
 	}
 
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

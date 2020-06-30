@@ -7,7 +7,6 @@
   -webkit-box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
   -moz-box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
   box-shadow: 5px 5px 24px -7px rgba(0, 0, 0, 0.44);
-
   }
 
 .card:hover{
@@ -18,20 +17,23 @@
 
 }
   
+.card{
+  height: 525px;
 
-  #btn1{
-  color: #27846a;
-  background: white;
-  border-color: #27846a;
 }
 
-#btn1:hover{
-  background: #27846a;
-  color: white;
+#title{
+  background-color: #eee;
+  height: 200px;
 }
+<<<<<<< HEAD
   
 .card{
   height: 540px;
+=======
+>>>>>>> bbb3eba7369f182c6693c7d8eb603d87b0af4e04
 
+#title > h5{
+  color:  #27846a;
 }
 

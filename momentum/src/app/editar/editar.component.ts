@@ -22,6 +22,13 @@ export class EditarComponent implements OnInit {
     let id = this.route.snapshot.params['id'];
     this.findById(id)
 
+    let admin = localStorage.getItem('admin');
+
+    if (admin == "false") {
+      alert('Você não tem permissão para acessar essa área!')
+      this.router.navigate(['/home']);
+    }
+
   }
 
   confirmaSenha(event: any) {
