@@ -31,6 +31,9 @@ export class EntrarComponent implements OnInit {
       localStorage.setItem("token", resp.token);
       localStorage.setItem("usuario", resp.usuario)
       localStorage.setItem("logado", "true")
+      if(resp.admin == true) {
+        localStorage.setItem("admin", "true")
+      }
       this.router.navigate(['/feed']);
       location.assign('/feed')
     }, err => {

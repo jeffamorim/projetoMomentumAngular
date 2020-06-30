@@ -11,4 +11,6 @@ import com.momentum.momentum.model.Postagem;
 public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 
 	public List<Postagem> findAllByTextoPostagemContainingIgnoreCase (String texto);
+	
+	public List<Postagem> findAllByUsuarioContaining (String usuario);
 }

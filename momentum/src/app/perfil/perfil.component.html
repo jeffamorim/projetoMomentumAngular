@@ -32,14 +32,15 @@
                     <h2 class="text-center">Reveja as suas publicações</h2>
                     <div class="container caixa-publicacao">
 
-                        <div class="publicacao">
-
-                            <p>Texto da postagem</p>
-                            <div class="d-flex justify-content-end">
-                                <p class="data">Data da postagem às tais horas.</p>
-                            </div>
-
+                        <div class="publicacao mb-3"
+                        *ngFor="let postagem of listaPostagem | orderBy : key : reverse | paginate: { itemsPerPage : 10, currentPage : p }">
+                        <div class="headerPost">
+                            <h6 class="nomePostagem">{{postagem.usuario}} -</h6>
+                            <p class="data">{{postagem.data_postagem | date: 'dd/MM/yyyy'}} às
+                                {{postagem.data_postagem | date: 'HH:mm'}} </p>
                         </div>
+                        <p>{{postagem.textoPostagem}}</p>
+                    </div>
                     </div>
                 </div>
             </div>

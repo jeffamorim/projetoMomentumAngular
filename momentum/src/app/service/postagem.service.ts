@@ -17,6 +17,10 @@ export class PostagemService {
     return this.http.get('http://localhost:8080/postagem', this.token)
   }
 
+  getAllByUser(user: string) {
+    return this.http.get(`http://localhost:8080/postagem/perfil/${user}`, this.token)
+  }
+
   postPostagem(post: Postagem) {
     return this.http.post('http://localhost:8080/postagem', post, this.token)
   }

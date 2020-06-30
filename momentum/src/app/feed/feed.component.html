@@ -38,9 +38,9 @@
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-end">
                     <button class="btn btn-outline-primary mx-3"
-                        [routerLink]="['/editar-postagem', postagem.id_postagem]">Editar</button>
+                        [routerLink]="['/editar-postagem', postagem.id_postagem]" *ngIf="admin">Editar</button>
                     <button class="btn btn-outline-secondary"
-                        [routerLink]="['/excluir-postagem', postagem.id_postagem]">Excluir</button>
+                        [routerLink]="['/excluir-postagem', postagem.id_postagem]" *ngIf="admin">Excluir</button>
                 </div>
             </div>
         </div>

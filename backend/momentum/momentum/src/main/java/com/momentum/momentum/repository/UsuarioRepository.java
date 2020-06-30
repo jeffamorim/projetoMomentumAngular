@@ -11,4 +11,5 @@ import com.momentum.momentum.model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	public Optional<Usuario> findAllByUsuario (String usuario);
+	
 }

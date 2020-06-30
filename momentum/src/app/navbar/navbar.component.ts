@@ -51,7 +51,8 @@ export class NavbarComponent implements OnInit {
   sair() {
     localStorage.setItem("token", "");
     localStorage.setItem("usuario", "")
-    localStorage.setItem("logado", "false")    
+    localStorage.setItem("logado", "false") 
+    localStorage.setItem("admin", "false")   
     this.router.navigate(['/home']);
     this.logado = false
     this.entrar = true

@@ -18,6 +18,7 @@ export class FeedComponent implements OnInit {
   pagina: boolean = false;
   nome: string;
   alerta: boolean = false
+  admin: boolean = false
 
   constructor(private postagemService: PostagemService) {
 
@@ -35,6 +36,11 @@ export class FeedComponent implements OnInit {
         location.assign('/feed')
       }, 2000)
     }
+
+    if(localStorage.getItem("admin") == "true") {
+      this.admin = true
+    }
+
   }
 
   findAllPostagem() {

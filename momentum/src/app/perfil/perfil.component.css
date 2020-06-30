@@ -40,4 +40,12 @@
   
   .data{
     font-size:12px;
+    padding-top: 11px;
+    margin-left: 4px;
+  }
+
+  .headerPost{
+    display: flex;
+    align-items: center;
+    
   }

@@ -20,7 +20,7 @@ import com.momentum.momentum.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/postagem")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin("*")
 public class PostagemController {
 	
 	@Autowired
@@ -46,6 +46,11 @@ public class PostagemController {
 	@GetMapping("/busca/{texto}")
 	public ResponseEntity<List<Postagem>> GetByTexto(@PathVariable String texto){
 		return ResponseEntity.ok(pr.findAllByTextoPostagemContainingIgnoreCase(texto));
+	}
+	
+	@GetMapping("/perfil/{usuario}")
+	public ResponseEntity<List<Postagem>> GetByUsuario(@PathVariable String usuario){
+		return ResponseEntity.ok(pr.findAllByUsuarioContaining(usuario));
 	}
 	
 	@PutMapping
