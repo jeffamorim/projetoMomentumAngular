@@ -59,7 +59,7 @@ public class UsuarioController {
 
 	@PutMapping
 	public ResponseEntity<Usuario> Put(@RequestBody Usuario usuario) {
-		return ResponseEntity.ok(repository.save(usuario));
+		return ResponseEntity.ok(usuarioService.CadastrarUsuario(usuario));
 	}
 	
 	@DeleteMapping("/{id}")

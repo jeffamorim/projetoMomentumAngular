@@ -17,6 +17,13 @@ export class DeletarComponent implements OnInit {
   ngOnInit() {
     let id: number = this.route.snapshot.params['id']
     this.findById(id)
+
+    let admin = localStorage.getItem('admin');
+
+    if (admin == "false") {
+      alert('Você não tem permissão para acessar essa área!')
+      this.router.navigate(['/home']);
+    }
   }
 
   findById(id: number) {
