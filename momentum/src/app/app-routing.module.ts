@@ -14,6 +14,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ExcluirPostagemComponent } from './excluir-postagem/excluir-postagem.component';
 import { EditarPostagemComponent } from './editar-postagem/editar-postagem.component';
+import { PrivacidadeComponent } from './privacidade/privacidade.component';
 
 const routes: Routes = [
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'feed', component: FeedComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'editar-postagem/:id', component: EditarPostagemComponent },
-  { path: 'excluir-postagem/:id', component: ExcluirPostagemComponent }
+  { path: 'excluir-postagem/:id', component: ExcluirPostagemComponent },
+  { path: 'privacidade', component: PrivacidadeComponent}
 
 ];
 

@@ -2,7 +2,8 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 #baixo{
-    width: 80vw;
+    width: 70vw;
+    background-color: red;
 }
 
 #card{
@@ -156,6 +157,3 @@ section {
 }
 
 
-@media(max-width: 500px){
-    
-}

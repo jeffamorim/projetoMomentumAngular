@@ -25,6 +25,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EditarPostagemComponent } from './editar-postagem/editar-postagem.component';
 import { ExcluirPostagemComponent } from './excluir-postagem/excluir-postagem.component';
+import { PrivacidadeComponent } from './privacidade/privacidade.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ExcluirPostagemComponent } from './excluir-postagem/excluir-postagem.co
     FeedComponent,
     EditarPostagemComponent,
     ExcluirPostagemComponent,
+    PrivacidadeComponent,
   ],
   imports: [
     BrowserModule,
