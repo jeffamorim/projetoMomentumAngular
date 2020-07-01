@@ -1,6 +1,7 @@
 export class Depoimento {
-    id: number;
-    gatilho: string;
-    titulo: string;
-    texto: string;
+    public id: number;
+    public gatilho: string;
+    public titulo: string;
+    public texto: string;
+    public data: Date;
 }

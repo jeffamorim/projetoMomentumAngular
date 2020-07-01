@@ -1,6 +1,69 @@
+<div id="title" class="d-flex justify-content-center align-items-center mb-5">
+    <h5 class="section-title h1">Depoimentos</h5>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
+            <div id="caixa-pesquisa">
+                <div class="row d-flex justify-content-center">
+                    <label for="pesquisa">Pesquisar por Titulo:</label>
+                    <div class="col-md-12 d-flex justify-content-center mb-3">
+                        <input type="text" id="pesquisa" placeholder="Busque um depoimento por título."
+                            class="form-control w-100" [(ngModel)]="titulo">
+                    </div>
+                    <button type="button" class="btn btn-outline-primary"
+                        (click)="pesquisarPorTitulo()">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex justify-content-center" id="cardblock"
+            *ngFor="let depoimento of listaDepoimento | orderBy : key : reverse | paginate: { itemsPerPage : 3, currentPage : p }">
+
+            <div class="card my-5" id="card">
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h6 class="text-center text-muted">Alerta de gatilho(s):</h6>
+                    <h6 class="text-center text-muted mb-5">{{depoimento.gatilho}}</h6>
+                    <h5 class="card-title text-center mb-3" id="titulo">{{depoimento.titulo}}</h5>
+                    <!--Text-->
+                    <p class="card-text text-center mb-5" style="min-height: 120px;">{{depoimento.texto}}</p>
+                </div>
+                <small class="text-center text-muted text-monospace mb-5">Publicado em:
+                    {{depoimento.data | date: "dd/MM/yyyy"}} às {{depoimento.data | date: "HH:mm"}}</small>
+
+                <div class="row" *ngIf="botao">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button class="btn btn-outline-secondary">Excluir</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mb-3">
+            <div *ngIf="pagina">
+                <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próxima">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="title" class="d-flex justify-content-center align-items-center my-5">
+    <h5 class="section-title h1">Acolhimento</h5>
+</div>
+
 <div class="container d-flex flex-column">
 
-    <h2 class="text-center mt-5 mb-5">ACOLHIMENTO</h2>
     <!-- Card deck -->
     <div class="card-deccdk row ">
 
@@ -198,58 +261,5 @@
 
     </div>
     <!-- Card deck -->
-
-</div>
-
-<div id="title" class="d-flex justify-content-center align-items-center mt-5">
-    <h5 class="section-title h1">Depoimentos</h5>
-</div>
-
-<div class="container">
-
-    <div class="row">
-
-        <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
-            <div id="caixa-pesquisa">
-                <div class="row d-flex justify-content-center">
-                    <label for="pesquisa">Pesquisar por Titulo:</label>
-                    <div class="col-md-12 d-flex justify-content-center mb-3">
-                        <input type="text" id="pesquisa" placeholder="Busque um depoimento por título."
-                            class="form-control w-100" [(ngModel)]="titulo">
-                    </div>
-                    <button type="button" class="btn btn-outline-primary"
-                        (click)="pesquisarPorTitulo()">Pesquisar</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 d-flex justify-content-center" *ngFor="let depoimento of listaDepoimento">
-
-            <div class="card my-5">
-
-                <!--Card content-->
-                <div class="card-body">
-
-                    <!--Title-->
-                    <h6 class="text-center text-muted">Alerta de gatilho(s):</h6>
-                    <h6 class="text-center text-muted mb-5">{{depoimento.gatilho}}</h6>
-                    <h5 class="card-title text-center mb-3">{{depoimento.titulo}}</h5>
-                    <!--Text-->
-                    <p class="card-text text-center mb-5" style="min-height: 120px;">{{depoimento.texto}}</p>
-                </div>
-                <small class="text-center text-muted text-monospace mb-5">Publicado em:
-                    {{depoimento.data | date: "dd/MM/yyyy"}} às {{depoimento.data | date: "HH:mm"}}</small>
-
-                <div class="row">
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <button class="btn btn-outline-secondary">Excluir</button>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Card -->
-
-        </div>
-    </div>
 
 </div>
