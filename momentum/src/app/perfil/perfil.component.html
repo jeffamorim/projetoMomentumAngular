@@ -33,14 +33,14 @@
                     <div class="container caixa-publicacao">
 
                         <div class="publicacao mb-3"
-                        *ngFor="let postagem of listaPostagem | orderBy : key : reverse | paginate: { itemsPerPage : 10, currentPage : p }">
-                        <div class="headerPost">
-                            <h6 class="nomePostagem">{{postagem.usuario}} -</h6>
-                            <p class="data">{{postagem.data_postagem | date: 'dd/MM/yyyy'}} às
-                                {{postagem.data_postagem | date: 'HH:mm'}} </p>
+                            *ngFor="let postagem of listaPostagem | orderBy : key : reverse | paginate: { itemsPerPage : 10, currentPage : p }">
+                            <div class="headerPost">
+                                <h6 class="nomePostagem">{{postagem.usuario}} -</h6>
+                                <p class="data">{{postagem.data_postagem | date: 'dd/MM/yyyy'}} às
+                                    {{postagem.data_postagem | date: 'HH:mm'}} </p>
+                            </div>
+                            <p>{{postagem.textoPostagem}}</p>
                         </div>
-                        <p>{{postagem.textoPostagem}}</p>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -68,14 +68,25 @@
                     <h2 class="text-center mb-5">Compartilhe o seu depoimento com todos</h2>
                     <div class="post">
                         <div class="form-group">
-                            <input type="text" class="titulo mb-3" placeholder="Insira um título para o seu depoimento">
+                            <input type="text" class="titulo mb-3"
+                                placeholder="Caso haja algum gatilho, por favor informe"
+                                [(ngModel)]="depoimento.gatilho">
+                            <input type="text" class="titulo mb-3" placeholder="Insira um título para o seu depoimento"
+                                [(ngModel)]="depoimento.titulo">
                             <textarea name="postagem" id="post" cols="50" rows="10"
-                                placeholder="Sinta-se a vontade para compartilhar algo com a comunidade"></textarea>
+                                placeholder="Sinta-se a vontade para compartilhar algo com a comunidade"
+                                [(ngModel)]="depoimento.texto"></textarea>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="d-flex justify-content-center w-100">
-                                    <button type="button" class="btn btn-info">Compartilhar</button>
+                                    <button type="button" class="btn btn-info"
+                                        (click)="compartilhar()">Compartilhar</button>
+                                </div>
+                                <div *ngIf="aviso">
+                                    <div class="alert alert-success text-center mt-3" role="alert">
+                                        Depoimento postado com sucesso!
+                                    </div>
                                 </div>
                             </div>
                         </div>

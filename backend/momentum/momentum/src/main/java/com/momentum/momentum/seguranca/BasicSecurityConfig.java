@@ -36,6 +36,8 @@ public class BasicSecurityConfig  extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.PUT, "/postagem").hasRole("ADMIN")
 		.antMatchers(HttpMethod.GET, "/postagem/**").hasRole("USER")
 		.antMatchers(HttpMethod.POST, "/postagem").hasRole("USER")
+		.antMatchers(HttpMethod.GET, "/depoimento").permitAll()
+		.antMatchers(HttpMethod.GET, "/depoimento/titulo/{titulo}").permitAll()
 		.antMatchers("/usuarios/logar").permitAll()
 		.antMatchers("/usuarios/cadastrar").permitAll()
 		.anyRequest().authenticated()

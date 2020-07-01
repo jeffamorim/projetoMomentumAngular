@@ -19,21 +19,13 @@
   
 .card{
   height: 525px;
-
 }
 
 #title{
   background-color: #eee;
   height: 200px;
 }
-<<<<<<< HEAD
-  
-.card{
-  height: 540px;
-=======
->>>>>>> bbb3eba7369f182c6693c7d8eb603d87b0af4e04
 
 #title > h5{
   color:  #27846a;
 }
-

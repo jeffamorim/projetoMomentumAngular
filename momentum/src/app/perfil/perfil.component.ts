@@ -3,6 +3,8 @@ import { Usuario } from '../model/Usuario';
 import { Router } from '@angular/router';
 import { PostagemService } from '../service/postagem.service';
 import { Postagem } from '../model/Postagem'
+import { Depoimento } from '../model/Depoimento';
+import { DepoimentoService } from '../service/depoimento.service';
 
 @Component({
   selector: 'app-perfil',
@@ -14,14 +16,16 @@ export class PerfilComponent implements OnInit {
   usuario: Usuario[]
   nomeUsuario: Usuario = new Usuario
   nome: string
+  depoimento: Depoimento = new Depoimento();
+  aviso: boolean = false
 
-  listaPostagem:Postagem[]
+  listaPostagem: Postagem[]
 
   key = 'data_postagem';
   reverse = true;
   p: number = 1;
 
-  constructor(private router: Router, private postagemService: PostagemService) { }
+  constructor(private router: Router, private postagemService: PostagemService, private depoimentoService: DepoimentoService) { }
 
   ngOnInit() {
     this.buscarPostagemUsuario()
@@ -38,14 +42,19 @@ export class PerfilComponent implements OnInit {
   }
 
   buscarPostagemUsuario() {
-    this.postagemService.getAllByUser(localStorage.getItem("usuario")).subscribe((resp:Postagem[]) => {
+    this.postagemService.getAllByUser(localStorage.getItem("usuario")).subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp
     })
   }
 
-  btnSair() {
-    localStorage.clear();
-    this.router.navigate(['/home'])
+  compartilhar() {
+    this.depoimentoService.postDepoimento(this.depoimento).subscribe((resp: Depoimento) => {
+      this.depoimento = resp;
+      this.aviso = true
+      setTimeout(() => {
+        location.assign('/perfil')
+      }, 3000);
+    })
   }
 
 }
