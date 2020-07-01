@@ -29,3 +29,16 @@
 #title > h5{
   color:  #27846a;
 }
+
+#titulo {
+  color:  #27846a;
+}
+
+small{
+  font-size: 0.6rem;
+}
+
+#cardblock > #card {
+  height: 500px;
+  width: 300px;
+}
