@@ -1,18 +1,10 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-#baixo{
-    width: 70vw;
-    background-color: red;
+#back-text{
+    display: none;
 }
 
-#card{
-    min-width: 350px;
-}
-
-#card1{
-    min-width: 350px;
-}
 
 .color{
     color: #27846a;
@@ -136,7 +128,7 @@ section {
 
 .frontside .card,
 .backside .card {
-    min-height: 312px !important;
+    min-height: 350px !important;
     
 }
 
@@ -157,3 +149,42 @@ section {
 }
 
 
+@media(max-width: 1300px){
+    #front-text{
+        display: none;
+    }
+    
+    #back-text{
+        
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width: 1024px){
+    #front-text{
+        display: none;
+    }
+    
+    #back-text{
+        
+        display: block;
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
+
+@media(max-width: 576px){
+ 
+    #back-text{
+        display: none;
+    }
+
+    #front-text{
+        
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
