@@ -30,6 +30,7 @@ export class EntrarComponent implements OnInit {
       this.user = resp;
       localStorage.setItem("token", resp.token);
       localStorage.setItem("usuario", resp.usuario)
+      localStorage.setItem("id", resp.user_id.toString())
       localStorage.setItem("logado", "true")
       if(resp.admin == true) {
         localStorage.setItem("admin", "true")
