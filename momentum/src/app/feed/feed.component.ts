@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostagemService } from '../service/postagem.service';
 import { Postagem } from '../model/Postagem'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -20,7 +21,7 @@ export class FeedComponent implements OnInit {
   alerta: boolean = false
   admin: boolean = false
 
-  constructor(private postagemService: PostagemService) {
+  constructor(private postagemService: PostagemService, private router: Router) {
 
   }
 
@@ -37,8 +38,15 @@ export class FeedComponent implements OnInit {
       }, 2000)
     }
 
-    if(localStorage.getItem("admin") == "true") {
+    if (localStorage.getItem("admin") == "true") {
       this.admin = true
+    }
+
+    let token = localStorage.getItem("token")
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
     }
 
   }

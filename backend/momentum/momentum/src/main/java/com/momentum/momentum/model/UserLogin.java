@@ -1,6 +1,8 @@
 package com.momentum.momentum.model;
 
 public class UserLogin {
+	
+	private long user_id;
 
 	private String nome; 
 	
@@ -12,13 +14,12 @@ public class UserLogin {
 	
 	private boolean admin;
 
-	
-	public boolean isAdmin() {
-		return admin;
+	public long getUser_id() {
+		return user_id;
 	}
 
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setUser_id(long user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getNome() {
@@ -52,6 +53,13 @@ public class UserLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
-	
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 }
