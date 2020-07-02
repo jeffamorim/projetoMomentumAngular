@@ -21,10 +21,10 @@
                         *ngIf="logado">Feed</a></li>
                 <li class="nav-item" (click)="estadoHome()"><a class="nav-link " routerLink="/perfil"
                         *ngIf="logado">Perfil</a></li>
-                <li class="nav-item" *ngIf="admin"><a routerLink="/usuarios" class="nav-link">Adm</a></li>
+                <li class="nav-item adm" *ngIf="admin"><a routerLink="/usuarios" class="nav-link adm">Adm</a></li>
             </div>
             <div id="linkright" class="navbar-nav ml-auto">
-                <button id="btn1" class="btn  mb-2" routerLink="/formulario" *ngIf="entrar">Cadastro</button>
+                <button id="btn1" class="btn  mb-2 mr-2" routerLink="/formulario" *ngIf="entrar">Cadastro</button>
                 <button id="btn1" class="btn  mb-2" routerLink="/entrar" *ngIf="entrar">Entrar</button>
                 <p *ngIf="logado" class="nomeUsuario"><a routerLink="/perfil">{{nome}}</a></p>
 

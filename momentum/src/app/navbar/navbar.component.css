@@ -17,6 +17,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.adm{
+    color: #0e6642;
+}
+
 .nav-item > a{
     color: black;
 }
