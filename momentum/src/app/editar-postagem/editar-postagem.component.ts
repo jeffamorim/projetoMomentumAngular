@@ -27,6 +27,13 @@ export class EditarPostagemComponent implements OnInit {
       this.router.navigate(['/home']);
     }
 
+    let token = localStorage.getItem("token")
+
+    if (token == null) {
+      alert('Você não está autenticada(o)! Faça o login antes de prosseguir.')
+      this.router.navigate(['/entrar']);
+    }
+
   }
 
   findById(id: number) {
