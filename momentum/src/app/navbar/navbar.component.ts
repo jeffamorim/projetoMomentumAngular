@@ -18,6 +18,8 @@ export class NavbarComponent implements OnInit {
   inicio : boolean = false
   home: boolean = false
   nome : string
+  admin: boolean = false
+
 
   constructor(private route: ActivatedRoute, private router: Router, private location: Location) { }
 
@@ -37,6 +39,9 @@ export class NavbarComponent implements OnInit {
       }
       });
     
+      if(localStorage.getItem("admin") == "true" && localStorage.getItem("logado") == "true"){
+        this.admin = true
+      }
   }
 
   estadoHome(){

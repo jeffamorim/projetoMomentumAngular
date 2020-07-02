@@ -10,8 +10,7 @@
                   compartilhamento de depoimentos
                   e/ou locais de acolhimento para depressão e ansiedade.</p>
           </div>
-          <button id="btn1" class="btn btn-outline-success mb-2" routerLink="/entrar">Entre</button>
-
+          <button id="btn1" class="btn btn-outline-success mb-2" routerLink="/entrar" *ngIf="usuario">Entre</button>
 
       </div>
       <div id="segundo" class="col-md-6 d-flex mb-5">

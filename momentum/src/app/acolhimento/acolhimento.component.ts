@@ -38,13 +38,10 @@ export class AcolhimentoComponent implements OnInit {
     })
   }
 
-  // excluirDepoimento() {
-  //   let id_depoimento = parseInt(localStorage.getItem('id_depoimento'));
-  //   this.depoimentoService.deleteDepoimento(id_depoimento).subscribe(() => {
-  //     alert("Depoimento excluído com sucesso!")
-  //     location.assign('/acolhimento')
-  //   })
-  // }
+  deletarDepoimento(id: number){
+    this.depoimentoService.deleteDepoimento(id).subscribe()
+    location.assign('/acolhimento')
+  }
 
   pesquisarPorTitulo() {
     this.depoimentoService.findByTitulo(this.titulo).subscribe((resp: Depoimento[]) => {

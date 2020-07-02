@@ -1,83 +1,15 @@
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-md-12">
-
-            <div class="container my-5">
-
-                <!-- Material form register -->
-                <div class="card">
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <div class="text-center mb-3 texto">
-                            <p>Ficou com alguma dúvida? Quer dar um feedback? Ou mesmo nos dar um alô? Mande uma
-                                mensagem que responderemos com todo o carinho! <fa-icon [icon]=faHeart></fa-icon>
-                            </p>
-                        </div>
-
-                        <!-- Form -->
-                        <div class="text-center form-group">
-
-                            <div class="form-row d-flex justify-content-center">
-                                <div class="col-md-6">
-                                    <!-- First name -->
-                                    <div class="md-form">
-                                        <input type="text" id="nome" class="form-control mb-1" required="true">
-                                        <label for="nome">Nome</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <!-- Phone number -->
-                                    <div class="md-form">
-                                        <input type="text" id="telefone" class="form-control">
-                                        <label for="telefone">Telefone</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row d-flex justify-content-center">
-                                <div class="col">
-                                    <!-- E-mail -->
-                                    <div class="md-form">
-                                        <input type="email" id="email" class="form-control mb-1" required="true">
-                                        <label for="email">Informe o seu Email</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Message -->
-                            <div class="md-form mt-3 col">
-                                <div class="mb-1 message">Fique à vontade para se expressar!</div>
-                                <textarea class="form-control" name="textoMensagem" id="mensagem" cols="35" rows="5"
-                                    required="true"></textarea>
-                                <label for="mensagem">Nos mande uma mensagem.</label>
-                            </div>
-
-
-                            <div class="form-row d-flex justify-content-center">
-                                <div class="col-md-6">
-                                    <!-- Sign up button -->
-                                    <button
-                                        class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                        type="button" id="btnEnviar">Enviar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Form -->
-
-                    </div>
-
-                </div>
-                <!-- Material form register -->
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+<body>
+	<div class="contato">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Contato</h2>
+				<input type="text" class="field" placeholder="Nome">
+				<input type="text" class="field" placeholder="Email">
+				<input type="text" class="field" placeholder="Telefone">
+				<textarea placeholder="Mensagem" class="field"></textarea>
+				<button class="btn" (click)="mensagem()">Enviar</button>
+			</div>
+		</div>
+	</div>
+</body>

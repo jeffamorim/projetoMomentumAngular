@@ -13,6 +13,13 @@ export class ContatoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
+  }
+
+  mensagem() {
+    alert("Mensagem enviada")
+    location.assign('/contato')
   }
 
 }
