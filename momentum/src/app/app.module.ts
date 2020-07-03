@@ -26,6 +26,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { EditarPostagemComponent } from './editar-postagem/editar-postagem.component';
 import { ExcluirPostagemComponent } from './excluir-postagem/excluir-postagem.component';
 import { PrivacidadeComponent } from './privacidade/privacidade.component';
+import { ListaContatoComponent } from './lista-contato/lista-contato.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { PrivacidadeComponent } from './privacidade/privacidade.component';
     EditarPostagemComponent,
     ExcluirPostagemComponent,
     PrivacidadeComponent,
+    ListaContatoComponent,
   ],
   imports: [
     BrowserModule,

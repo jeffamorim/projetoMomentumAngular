@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { Contato } from '../model/Contato';
+import { ContatoService } from '../service/contato.service';
 
 @Component({
   selector: 'app-contato',
@@ -8,18 +9,21 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class ContatoComponent implements OnInit {
 
-  faHeart = faHeart;
+  contato: Contato = new Contato
 
-  constructor() { }
+  constructor(private contatoService: ContatoService) { }
 
   ngOnInit(): void {
 
-
   }
-
-  mensagem() {
-    alert("Mensagem enviada")
-    location.assign('/contato')
+  enviar() {
+    this.contatoService.postContato(this.contato).subscribe((resp: Contato) => {
+      this.contato = resp;
+      alert('Mensagem enviada!')
+      location.assign('/contato')
+    }, (erro) => {
+      alert("Algum dado invalido!")
+    })
   }
 
 }

@@ -4,11 +4,11 @@
 			<div class="left"></div>
 			<div class="right">
 				<h2>Contato</h2>
-				<input type="text" class="field" placeholder="Nome">
-				<input type="text" class="field" placeholder="Email">
-				<input type="text" class="field" placeholder="Telefone">
-				<textarea placeholder="Mensagem" class="field"></textarea>
-				<button id="btn1" class="btn" (click)="mensagem()">Enviar</button>
+				<input type="text" class="field" placeholder="Nome" [(ngModel)]="contato.nome">
+				<input type="text" class="field" placeholder="Email" [(ngModel)]="contato.email">
+				<input type="text" class="field" placeholder="Telefone" [(ngModel)]="contato.telefone">
+				<textarea placeholder="Mensagem" class="field" [(ngModel)]="contato.mensagem"></textarea>
+				<button id="btn1" class="btn" (click)="enviar()">Enviar</button>
 			</div>
 		</div>
 	</div>

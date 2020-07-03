@@ -7,6 +7,12 @@
     border-color: #27846a;
 }
 
+.logo{
+    width: 150px;
+    height: auto;
+    margin: -40px -40px -45px;
+}
+
 #btn1:hover{
     background: #27846a;
     color: white;
