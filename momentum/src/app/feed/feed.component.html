@@ -1,7 +1,7 @@
 <div class="bg">
     <div class="caixa">
         <div class="perfil">
-            <img src="../../assets/img/emojicat.jpeg" alt="imagem de perfil" class="imgperfil">
+            <img src="../../assets/perfil-menina.jpg" alt="imagem de perfil" class="imgperfil">
             <h4 class="nome"><a routerLink="/perfil">{{nome}}</a></h4>
         </div>
         <div class="post">
@@ -39,8 +39,8 @@
                 <div class="col-md-12 d-flex justify-content-end">
                     <button class="btn btn-outline-primary mx-3"
                         [routerLink]="['/editar-postagem', postagem.id_postagem]" *ngIf="admin">Editar</button>
-                    <button class="btn btn-outline-secondary"
-                        [routerLink]="['/excluir-postagem', postagem.id_postagem]" *ngIf="admin">Excluir</button>
+                    <button class="btn btn-outline-secondary" [routerLink]="['/excluir-postagem', postagem.id_postagem]"
+                        *ngIf="admin">Excluir</button>
                 </div>
             </div>
         </div>
