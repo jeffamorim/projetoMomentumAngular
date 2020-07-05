@@ -11,41 +11,41 @@ import { Location } from '@angular/common';
 export class NavbarComponent implements OnInit {
 
 
-  usuario : Usuario[]
-  nomeUsuario : Usuario = new Usuario
-  logado : boolean = false
-  entrar : boolean = true
-  inicio : boolean = false
+  usuario: Usuario[]
+  nomeUsuario: Usuario = new Usuario
+  logado: boolean = false
+  entrar: boolean = true
+  inicio: boolean = false
   home: boolean = false
-  nome : string
+  nome: string
   admin: boolean = false
 
 
   constructor(private route: ActivatedRoute, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem("logado") == "true") {
+    if (localStorage.getItem("logado") == "true") {
       this.logado = true
       this.entrar = false
       this.nome = localStorage.getItem("usuario")
     }
 
     this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart){
+      if (event instanceof NavigationStart) {
         this.home = true
-      } 
-      else if(event instanceof NavigationStart || this.location.path() == "/feed") {
+      }
+      else if (event instanceof NavigationStart || this.location.path() == "/feed") {
         this.home = false
       }
-      });
-    
-      if(localStorage.getItem("admin") == "true" && localStorage.getItem("logado") == "true"){
-        this.admin = true
-      }
+    });
+
+    if (localStorage.getItem("admin") == "true" && localStorage.getItem("logado") == "true") {
+      this.admin = true
+    }
   }
 
-  estadoHome(){
-    if(this.location.path() == "/home") {
+  estadoHome() {
+    if (this.location.path() == "/home") {
       this.home = true
     }
     else {
@@ -54,10 +54,10 @@ export class NavbarComponent implements OnInit {
   }
 
   sair() {
-    localStorage.setItem("token", "");
+    localStorage.removeItem("token")
     localStorage.setItem("usuario", "")
-    localStorage.setItem("logado", "false") 
-    localStorage.setItem("admin", "false")   
+    localStorage.setItem("logado", "false")
+    localStorage.setItem("admin", "false")
     this.router.navigate(['/home']);
     this.logado = false
     this.entrar = true
