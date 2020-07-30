@@ -2,8 +2,8 @@
     <img src = "./momentum/src/assets/logo900px900px_1_original.png" alt = "Logo" width ="200px" height="200px">
 </div>
 
-<h6 align = center>Uma rede social com o intuito de facilitar à busca por informações, compartilhamentos de depoimentos e/ou locais de acolhimento para pessoas com depressão e ansiedade.
-</h6>
+<h4 align = center>Uma rede social com o intuito de facilitar à busca por informações, compartilhamentos de depoimentos e/ou locais de acolhimento para pessoas com depressão e ansiedade.
+</h4>
 
 <div align = center>
     <a href = "#computer-tecnologias">Tecnologias</a> | <a href= "#information_source-como-usar">Como usar</a>
@@ -11,7 +11,11 @@
 <br>
 
 <div align= center>
-    <img src = "./momentum/src/assets/mobile.gif">
+
+<img src = "./momentum/src/assets/mobile.gif" alt = "GIF demonstrativo da aplicação rodando com as dimensões de um celular">
+<br>
+
+<img src = "./momentum/src/assets/desktop.gif" alt = "GIF demonstrativo da aplicação rodando com as dimensões de um desktop">
 </div>
 <br>
 
