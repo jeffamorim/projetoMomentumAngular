@@ -11,11 +11,7 @@
 <br>
 
 <div align= center>
-
-<img src = "./momentum/src/assets/mobile.gif" alt = "GIF demonstrativo da aplicação rodando com as dimensões de um celular">
-<br>
-
-<img src = "./momentum/src/assets/desktop.gif" alt = "GIF demonstrativo da aplicação rodando com as dimensões de um desktop">
+    <img src = "./momentum/src/assets/desktop.gif" alt = "GIF demonstrativo da aplicação rodando com as dimensões de um desktop">
 </div>
 <br>
 
