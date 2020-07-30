@@ -1,18 +1,18 @@
-<section align = center>
+<div align = center>
     <img src = "./momentum/src/assets/logo900px900px_1_original.png" alt = "Logo" width ="200px" height="200px">
-</section>
+</div>
 
 <h6 align = center>Uma rede social com o intuito de facilitar à busca por informações, compartilhamentos de depoimentos e/ou locais de acolhimento para pessoas com depressão e ansiedade.
 </h6>
 
-<section align = center>
-    <a href = "###computer-tecnologias">Tecnologias</a> | <a href= "###information_source-como-usar">Como usar</a>
-</section>
+<div align = center>
+    <a href = "#computer-tecnologias">Tecnologias</a> | <a href= "#information_source-como-usar">Como usar</a>
+</div>
 <br>
 
-<section align= center>
+<div align= center>
     <img src = "./momentum/src/assets/mobile.gif">
-</section>
+</div>
 <br>
 
 ### :computer: Tecnologias
